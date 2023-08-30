@@ -1,0 +1,25 @@
+package com.example.internshipkocelanuntiumnewsapp;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+public class WelcomeScreen extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_welcome_screen);
+
+        Button getStarted_welcome_screen = (Button)findViewById(R.id.get_started_button_welcome_screen);
+        getStarted_welcome_screen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(WelcomeScreen.this, SignIn.class));
+            }
+        });
+    }
+}

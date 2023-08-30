@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Onboarding">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="16dp"
+        android:layout_height="288dp"
+        android:layout_marginTop="144dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/onboardingimgleft"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/onboardingimgleft" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="288dp"
+        android:layout_height="336dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="44dp"
+        android:foregroundGravity="center"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/onboardingimgcenter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="onboarding center image"
+            app:srcCompat="@drawable/onboardingimgcenter" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="16dp"
+        android:layout_height="288dp"
+        android:layout_marginTop="144dp"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/onboardingimgright" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="216dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="538dp"
+        android:fontFamily="@font/sfsemibold"
+        android:lineHeight="32dp"
+        android:text="@string/first_to_know"
+        android:textAlignment="center"
+        android:textColor="@color/black_primary"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="216dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="594dp"
+        android:text="@string/all_news_in_one_place_be_the_first_to_know_last_news"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textColor="@color/gray_primary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/next_onboarding_button"
+        android:layout_width="336dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="704dp"
+        android:text="@string/next"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/roundshapebutton"
+                />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

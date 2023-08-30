@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".verification">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="246dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="72dp"
+            android:layout_marginEnd="121dp"
+            android:fontFamily="@font/sfsemibold"
+            android:text="@string/verification_code"
+            android:textColor="@color/black_primary"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="336dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="19dp"
+            android:fontFamily="@font/sfregular"
+            android:textColor="@color/gray_primary"
+            android:textSize="16sp"
+            android:text="@string/you_need_to_enter_4_digit_code_we_send_to_your_email_address"
+
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="32dp">
+
+            <EditText
+                android:id="@+id/verificationText1"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="text"
+                android:text=""
+                android:background="@drawable/rounded_corner_view"/>
+
+            <EditText
+                android:id="@+id/verificationText2"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="text"
+                android:layout_marginStart="16dp"
+                android:text=""
+                android:background="@drawable/rounded_corner_view"/>
+
+            <EditText
+                android:id="@+id/verificationText3"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_weight="1"
+                android:layout_marginStart="16dp"
+                android:ems="10"
+                android:inputType="text"
+                android:text=""
+                android:background="@drawable/rounded_corner_view"/>
+
+            <EditText
+                android:id="@+id/verificationText4"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="text"
+                android:layout_marginStart="16dp"
+                android:text=""
+                android:background="@drawable/rounded_corner_view"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/signinbutton"
+            android:layout_width="336dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="19dp"
+            android:background="@drawable/roundshapebutton"
+            android:text="@string/confirm"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+
+        <LinearLayout
+            android:layout_width="276dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="49dp"
+            android:layout_marginTop="402dp"
+            android:layout_marginEnd="65dp"
+            android:orientation="horizontal"
+            android:textAlignment="center">
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sfmedium"
+                android:text="@string/didn_t_receive_an_email"
+                android:textColor="@color/black_lighter"
+                android:textSize="16sp"
+
+                />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/sfmedium"
+                android:text="@string/send_again"
+                android:textColor="@color/black_primary"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

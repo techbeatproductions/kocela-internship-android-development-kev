@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".select_your_favorite_topics">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="336dp"
+            android:layout_height="32dp"
+            android:text="@string/select_your_favorite_topics"
+            android:fontFamily="@font/sfsemibold"
+            android:textSize="24sp"
+            android:textColor="@color/black_primary"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="72dp"
+            />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="336dp"
+            android:layout_height="48dp"
+            android:text="@string/select_some_of_your_favorite_topics_to_let_us_suggest_better_news_for_you"
+            android:fontFamily="@font/sfregular"
+            android:textSize="16sp"
+            android:textColor="@color/gray_primary"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="20dp"
+            />
+
+        <LinearLayout
+            android:layout_width="336dp"
+            android:layout_height="72dp"
+            android:orientation="horizontal"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="32dp"
+
+            >
+
+            <Button
+                android:id="@+id/sports_topic_button"
+                android:background="@drawable/rounded_corner_view"
+                android:layout_width="160dp"
+                android:layout_height="72dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="16dp"
+                android:textAllCaps="false"
+                android:text="@string/sports"
+                android:fontFamily="@font/sfsemibold"
+                android:textSize="16sp"
+                android:textColor="@color/gray_darker"/>
+
+            <Button
+                android:id="@+id/politics_topic_button"
+                android:background="@drawable/rounded_corner_view"
+                android:layout_width="160dp"
+                android:layout_height="72dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="16dp"
+                android:textAllCaps="false"
+                android:text="@string/politics"
+                android:fontFamily="@font/sfsemibold"
+                android:textSize="16sp"
+                android:textColor="@color/gray_darker"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="336dp"
+            android:layout_height="72dp"
+            android:orientation="horizontal"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+
+            >
+
+            <Button
+                android:id="@+id/life_topic_button"
+                android:background="@drawable/rounded_corner_view"
+                android:layout_width="160dp"
+                android:layout_height="72dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="16dp"
+                android:textAllCaps="false"
+                android:text="@string/life"
+                android:fontFamily="@font/sfsemibold"
+                android:textSize="16sp"
+                android:textColor="@color/gray_darker"/>
+
+            <Button
+                android:id="@+id/gaming_topic_button"
+                android:background="@drawable/rounded_corner_view"
+                android:layout_width="160dp"
+                android:layout_height="72dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="16dp"
+                android:textAllCaps="false"
+                android:text="🎮   Gaming"
+                android:fontFamily="@font/sfsemibold"
+                android:textSize="16sp"
+                android:textColor="@color/gray_darker"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="336dp"
+            android:layout_height="72dp"
+            android:orientation="horizontal"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            >
+
+            <Button
+                android:id="@+id/animals_topic_button"
+                android:background="@drawable/rounded_corner_view"
+                android:layout_width="160dp"
+                android:layout_height="72dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="16dp"
+                android:textAllCaps="false"
+                android:text="🐻   Animals"
+                android:fontFamily="@font/sfsemibold"
+                android:textSize="16sp"
+                android:textColor="@color/gray_darker"/>
+
+            <Button
+                android:id="@+id/nature_topic_button"
+                android:background="@drawable/rounded_corner_view"
+                android:layout_width="160dp"
+                android:layout_height="72dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="16dp"
+                android:textAllCaps="false"
+                android:text="🌴   Nature"
+                android:fontFamily="@font/sfsemibold"
+                android:textSize="16sp"
+                android:textColor="@color/gray_darker"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="336dp"
+            android:layout_height="72dp"
+            android:orientation="horizontal"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            >
+
+            <Button
+                android:id="@+id/food_topic_button"
+                android:background="@drawable/rounded_corner_view"
+                android:layout_width="160dp"
+                android:layout_height="72dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="16dp"
+                android:textAllCaps="false"
+                android:text="🍔   Food"
+                android:fontFamily="@font/sfsemibold"
+                android:textSize="16sp"
+                android:textColor="@color/gray_darker"/>
+
+            <Button
+                android:id="@+id/art_topic_button"
+                android:background="@drawable/rounded_corner_view"
+                android:layout_width="160dp"
+                android:layout_height="72dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="16dp"
+                android:textAllCaps="false"
+                android:text="🎨   Art"
+                android:fontFamily="@font/sfsemibold"
+                android:textSize="16sp"
+                android:textColor="@color/gray_darker"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="336dp"
+            android:layout_height="72dp"
+            android:orientation="horizontal"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            >
+
+            <Button
+                android:id="@+id/history_topic_button"
+                android:background="@drawable/rounded_corner_view"
+                android:layout_width="160dp"
+                android:layout_height="72dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="16dp"
+                android:textAllCaps="false"
+                android:text="📜   History"
+                android:fontFamily="@font/sfsemibold"
+                android:textSize="16sp"
+                android:textColor="@color/gray_darker"/>
+
+            <Button
+                android:id="@+id/fashion_topic_button"
+                android:background="@drawable/rounded_corner_view"
+                android:layout_width="160dp"
+                android:layout_height="72dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="16dp"
+                android:textAllCaps="false"
+                android:text="👗   Fashion"
+                android:fontFamily="@font/sfsemibold"
+                android:textSize="16sp"
+                android:textColor="@color/gray_darker"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="336dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="19dp"
+            android:text="@string/next"
+            android:textColor="@color/white"
+
+            android:background="@drawable/roundshapebutton"/>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
