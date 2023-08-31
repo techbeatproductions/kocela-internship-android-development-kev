@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".articles"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/articles_img_container"
+            android:layout_width="match_parent"
+            android:layout_height="384dp"
+
+            android:background="@drawable/news_card_container_drawable">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/article_image"
+                android:scaleType="centerCrop"
+                android:background="@drawable/news_card_container_drawable"/>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="444dp"
+            android:background="@drawable/news_card_container_drawable"
+            android:layout_below="@id/articles_img_container"/>
+    </RelativeLayout>
+</ScrollView>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Internship Kocela nuntium news app</string>
+    <string name="app_name">Nuntium</string>
     <string name="first_to_know">First to know</string>
     <string name="all_news_in_one_place_be_the_first_to_know_last_news">All news in one place, be the first to know last news</string>
     <string name="next">Next</string>
@@ -35,4 +35,17 @@
     <string name="sports">🏈 Sports</string>
     <string name="politics">⚖️ Politics</string>
     <string name="life">🌞 Life</string>
+    <string name="username_edit_text_hint">Username</string>
+    <string name="browse_text_view">Browse</string>
+    <string name="discover_things_of_this_world">Discover things of this world</string>
+    <string name="search_string_text">Search</string>
+    <string name="random">Random</string>
+    <string name="sports_news_button">Sports</string>
+    <string name="gaming_news">Gaming</string>
+    <string name="politics_news">Politics</string>
+    <string name="a_simple_trick_for_creating_color_palettes_quickly">A Simple Trick For Creating Color Palettes Quickly</string>
+    <string name="title_activity_navb">navb</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>

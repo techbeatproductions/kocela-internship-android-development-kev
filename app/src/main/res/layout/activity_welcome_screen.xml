@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,60 +7,67 @@
     tools:context=".WelcomeScreen"
     android:background="@color/white">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
 
-    <ImageView
-        android:id="@+id/logo_text"
-        android:layout_width="120dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="544dp"
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="202dp"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:id="@+id/hands3D"
+                android:layout_width="496dp"
+                android:layout_height="272dp"
+                android:layout_marginStart="-79dp"
+                android:layout_marginEnd="-79dp"
+                android:layout_marginBottom="-79dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/hands3d" />
+
+            <ImageView
+                android:id="@+id/logo_text"
+                android:layout_width="120dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="128dp"
+                android:layout_marginTop="72dp"
+                android:layout_marginEnd="127dp"
+                android:layout_below="@id/hands3D"
+                android:src="@drawable/logo_text" />
+
+            <TextView
+                android:id="@+id/welcome_screen_text"
+                android:layout_width="216dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="79dp"
+                android:layout_below="@id/logo_text"
+                android:fontFamily="@font/sfregular"
+                android:text="@string/all_news_in_one_place_be_the_first_to_know_last_news"
+                android:textAlignment="center"
+                android:textColor="@color/gray_primary"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/get_started_button_welcome_screen"
+                android:layout_width="336dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="64dp"
+                android:layout_marginEnd="19dp"
+                android:layout_marginBottom="16dp"
+                android:layout_below="@id/welcome_screen_text"
+                android:background="@drawable/roundshapebutton"
+                android:fontFamily="@font/sfsemibold"
+
+                android:text="@string/get_started"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </RelativeLayout>
+    </ScrollView>
 
 
-        android:src="@drawable/logo_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="496dp"
-        android:layout_height="272dp"
-        android:layout_marginTop="202dp"
-        android:layout_margin="-79dp"
-        android:scaleType="fitXY"
-
-        android:src="@drawable/hands3d"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="216dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="594dp"
-        android:text="@string/all_news_in_one_place_be_the_first_to_know_last_news"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:fontFamily="@font/sfregular"
-        android:textSize="16sp"
-        android:textColor="@color/gray_primary"
-        />
-
-    <Button
-        android:id="@+id/get_started_button_welcome_screen"
-        android:layout_width="336dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="706dp"
-        android:background="@drawable/roundshapebutton"
-        android:fontFamily="@font/sfsemibold"
-        android:lineHeight="24sp"
-        android:text="@string/get_started"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

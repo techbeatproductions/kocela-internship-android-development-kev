@@ -1,30 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".select_your_favorite_topics">
+    tools:context=".select_your_favorite_topics"
+    android:background="@color/white"
+    >
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="124dp">
 
         <TextView
-            android:id="@+id/textView15"
+            android:id="@+id/select_your_favorite_topics_text_view"
             android:layout_width="336dp"
             android:layout_height="32dp"
             android:text="@string/select_your_favorite_topics"
             android:fontFamily="@font/sfsemibold"
             android:textSize="24sp"
             android:textColor="@color/black_primary"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="72dp"
+
             />
 
         <TextView
-            android:id="@+id/textView16"
+            android:id="@+id/select_some_of_your_text_view"
             android:layout_width="336dp"
             android:layout_height="48dp"
             android:text="@string/select_some_of_your_favorite_topics_to_let_us_suggest_better_news_for_you"
@@ -32,15 +37,18 @@
             android:textSize="16sp"
             android:textColor="@color/gray_primary"
             android:layout_marginTop="8dp"
-            android:layout_marginStart="20dp"
+
+            android:layout_below="@id/select_your_favorite_topics_text_view"
             />
 
         <LinearLayout
+            android:id="@+id/first_topics_container"
             android:layout_width="336dp"
             android:layout_height="72dp"
             android:orientation="horizontal"
-            android:layout_marginStart="20dp"
+
             android:layout_marginTop="32dp"
+            android:layout_below="@id/select_some_of_your_text_view"
 
             >
 
@@ -63,7 +71,7 @@
                 android:layout_width="160dp"
                 android:layout_height="72dp"
                 android:layout_weight="1"
-                android:layout_marginEnd="16dp"
+
                 android:textAllCaps="false"
                 android:text="@string/politics"
                 android:fontFamily="@font/sfsemibold"
@@ -72,11 +80,13 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/second_topics_group_container"
             android:layout_width="336dp"
             android:layout_height="72dp"
             android:orientation="horizontal"
-            android:layout_marginStart="20dp"
+
             android:layout_marginTop="16dp"
+            android:layout_below="@id/first_topics_container"
 
             >
 
@@ -99,7 +109,7 @@
                 android:layout_width="160dp"
                 android:layout_height="72dp"
                 android:layout_weight="1"
-                android:layout_marginEnd="16dp"
+
                 android:textAllCaps="false"
                 android:text="🎮   Gaming"
                 android:fontFamily="@font/sfsemibold"
@@ -108,11 +118,13 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/third_topics_group_container"
             android:layout_width="336dp"
             android:layout_height="72dp"
             android:orientation="horizontal"
-            android:layout_marginStart="20dp"
+
             android:layout_marginTop="16dp"
+            android:layout_below="@id/second_topics_group_container"
             >
 
             <Button
@@ -134,7 +146,7 @@
                 android:layout_width="160dp"
                 android:layout_height="72dp"
                 android:layout_weight="1"
-                android:layout_marginEnd="16dp"
+
                 android:textAllCaps="false"
                 android:text="🌴   Nature"
                 android:fontFamily="@font/sfsemibold"
@@ -143,11 +155,13 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/fourth_topic_group_container"
             android:layout_width="336dp"
             android:layout_height="72dp"
             android:orientation="horizontal"
-            android:layout_marginStart="20dp"
+
             android:layout_marginTop="16dp"
+            android:layout_below="@+id/third_topics_group_container"
             >
 
             <Button
@@ -169,7 +183,7 @@
                 android:layout_width="160dp"
                 android:layout_height="72dp"
                 android:layout_weight="1"
-                android:layout_marginEnd="16dp"
+
                 android:textAllCaps="false"
                 android:text="🎨   Art"
                 android:fontFamily="@font/sfsemibold"
@@ -178,11 +192,13 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/fifth_topic_group_container"
             android:layout_width="336dp"
             android:layout_height="72dp"
             android:orientation="horizontal"
-            android:layout_marginStart="20dp"
+
             android:layout_marginTop="16dp"
+            android:layout_below="@+id/fourth_topic_group_container"
             >
 
             <Button
@@ -204,7 +220,7 @@
                 android:layout_width="160dp"
                 android:layout_height="72dp"
                 android:layout_weight="1"
-                android:layout_marginEnd="16dp"
+
                 android:textAllCaps="false"
                 android:text="👗   Fashion"
                 android:fontFamily="@font/sfsemibold"
@@ -217,12 +233,11 @@
             android:layout_width="336dp"
             android:layout_height="56dp"
             android:layout_marginTop="16dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="19dp"
             android:text="@string/next"
             android:textColor="@color/white"
+            android:layout_below="@id/fifth_topic_group_container"
 
             android:background="@drawable/roundshapebutton"/>
 
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+</ScrollView>

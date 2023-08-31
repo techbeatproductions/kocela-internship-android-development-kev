@@ -1,46 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUp">
+    tools:context=".SignUp"
+    android:background="@color/white">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginBottom="8dp"
+       >
 
         <TextView
-            android:id="@+id/textView13"
+            android:id="@+id/welcome_to_nuntium_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/welcome_to_nuntium"
             android:fontFamily="@font/sfsemibold"
             android:textSize="24sp"
             android:textColor="@color/black_primary"
-            android:layout_marginTop="72dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="19dp"
+
+
             />
 
         <TextView
-            android:id="@+id/textView14"
+            android:id="@+id/hello_sign_up_text_view"
             android:layout_width="336dp"
             android:layout_height="48dp"
             android:text="@string/hello_i_guess_you_are_new_around_here_you_can_start_using_the_application_after_sign_up"
             android:layout_marginTop="8dp"
-            android:layout_marginStart="20dp"
             android:fontFamily="@font/sfregular"
             android:textSize="16sp"
             android:textColor="@color/gray_primary"
+            android:layout_below="@id/welcome_to_nuntium_text_view"
             />
 
         <EditText
-            android:id="@+id/editTextText"
+            android:id="@+id/sign_up_editTextText"
             android:layout_width="336dp"
             android:layout_height="56dp"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="19dp"
             android:ems="10"
@@ -49,66 +52,67 @@
             android:text=""
             android:drawableStart="@drawable/user"
             android:drawablePadding="24dp"
-            android:hint="Username"
-            android:paddingLeft="24dp"
+            android:hint="@string/username_edit_text_hint"
+            android:textColorHint="@color/gray_primary"
+            android:paddingStart="24dp"
+            android:layout_below="@id/hello_sign_up_text_view"
             />
 
         <EditText
-            android:id="@+id/editTextTextEmailAddress"
+            android:id="@+id/sign_up_editTextTextEmailAddress"
             android:layout_width="336dp"
             android:layout_height="56dp"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="19dp"
             android:background="@drawable/rounded_corner_view"
             android:drawableStart="@drawable/envelope"
             android:drawablePadding="24dp"
             android:ems="10"
             android:hint="@string/email_address_hint"
+            android:textColorHint="@color/gray_primary"
             android:inputType="textEmailAddress"
-            android:paddingLeft="24dp" />
+            android:paddingStart="24dp"
+            android:layout_below="@id/sign_up_editTextText"/>
 
         <EditText
-            android:id="@+id/newTextPassword"
+            android:id="@+id/sign_up_newTextPassword"
             android:layout_width="336dp"
             android:layout_height="56dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="19dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/rounded_corner_view"
             android:drawableStart="@drawable/padlock"
             android:drawablePadding="24dp"
             android:ems="10"
             android:hint="@string/new_password_hint"
+            android:textColorHint="@color/gray_primary"
             android:inputType="textPassword"
-            android:paddingLeft="24dp" />
+            android:paddingStart="24dp"
+            android:layout_below="@id/sign_up_editTextTextEmailAddress"/>
 
         <EditText
-            android:id="@+id/repeatnewTextPassword"
+            android:id="@+id/sign_up_repeatnewTextPassword"
             android:layout_width="336dp"
             android:layout_height="56dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="19dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/rounded_corner_view"
             android:drawableStart="@drawable/padlock"
             android:drawablePadding="24dp"
             android:ems="10"
             android:hint="@string/repeat_new_password_hint"
+            android:textColorHint="@color/gray_primary"
             android:inputType="textPassword"
-            android:paddingLeft="24dp" />
+            android:paddingStart="24dp"
+            android:layout_below="@id/sign_up_newTextPassword"/>
 
         <Button
             android:id="@+id/create_new_password_button"
             android:layout_width="336dp"
             android:layout_height="56dp"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="19dp"
             android:background="@drawable/roundshapebutton"
             android:text="@string/sign_up"
             android:textAllCaps="false"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:layout_below="@id/sign_up_repeatnewTextPassword"/>
 
 
         <LinearLayout
@@ -117,6 +121,7 @@
             android:orientation="horizontal"
             android:layout_marginStart="49dp"
             android:layout_marginTop="202dp"
+            android:layout_below="@id/create_new_password_button"
             >
 
             <TextView
@@ -140,5 +145,5 @@
                 android:textColor="@color/black_primary"
                 android:textSize="16sp" />
         </LinearLayout>
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+</ScrollView>
