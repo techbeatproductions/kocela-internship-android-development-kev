@@ -173,6 +173,7 @@
                     android:lineSpacingExtra="15sp"
                     android:text="@string/new_article_text"
                     android:textSize="16sp"
+
                     />
             </RelativeLayout>
 
