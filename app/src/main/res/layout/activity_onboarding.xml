@@ -9,8 +9,9 @@
     android:background="@color/white"
     tools:context=".Onboarding">
 
+
    <RelativeLayout
-       android:layout_width="wrap_content"
+       android:layout_width="match_parent"
        android:layout_height="wrap_content">
 
        <androidx.cardview.widget.CardView
@@ -29,23 +30,25 @@
 
        <androidx.cardview.widget.CardView
            android:id="@+id/onboardingimgcentercontainer"
-           android:layout_width="244dp"
+           android:layout_width="288dp"
            android:layout_height="336dp"
 
            android:layout_marginStart="28dp"
+           android:layout_marginEnd="28dp"
            android:layout_marginTop="@dimen/demo"
 
            android:foregroundGravity="center"
            app:cardCornerRadius="12dp"
 
-           android:layout_toRightOf="@id/onboardingimgleftcontainer">
+
+           android:layout_toEndOf="@id/onboardingimgleftcontainer">
 
            <ImageView
                android:id="@+id/onboardingimgcenter"
                android:layout_width="match_parent"
                android:layout_height="match_parent"
-               android:scaleType="fitXY"
-               android:contentDescription="onboarding center image"
+
+               android:contentDescription="@string/onboarding_center_image"
                app:srcCompat="@drawable/onboardingimgcenter" />
 
        </androidx.cardview.widget.CardView>
@@ -56,8 +59,12 @@
            android:layout_height="@dimen/onnboard_dimens"
            android:layout_marginTop="144dp"
            android:layout_marginStart="28dp"
+
+
+
            app:cardCornerRadius="12dp"
-           android:layout_toRightOf="@id/onboardingimgcentercontainer"
+           android:layout_toEndOf="@id/onboardingimgcentercontainer"
+
            >
 
            <ImageView
@@ -73,7 +80,7 @@
            android:layout_height="8dp"
            android:src="@drawable/steps"
            android:layout_below="@id/onboardingimgcentercontainer"
-           android:layout_marginTop="30dp"
+           android:layout_marginTop="40dp"
            android:layout_marginStart="150dp"
            android:layout_marginEnd="160dp"
            />
@@ -84,7 +91,7 @@
            android:layout_height="32dp"
            android:layout_marginStart="80dp"
            android:layout_marginEnd="79dp"
-           android:layout_marginTop="24dp"
+           android:layout_marginTop="34dp"
            android:fontFamily="@font/sfsemibold"
 
            android:text="@string/first_to_know"
@@ -98,7 +105,7 @@
            android:id="@+id/allnewstextonboarding"
            android:layout_width="216dp"
            android:layout_height="48dp"
-           android:layout_marginStart="68dp"
+           android:layout_marginStart="80dp"
            android:layout_marginTop="24dp"
            android:text="@string/all_news_in_one_place_be_the_first_to_know_last_news"
            android:textAlignment="center"
@@ -110,7 +117,7 @@
            android:id="@+id/next_onboarding_button"
            android:layout_width="336dp"
            android:layout_height="wrap_content"
-           android:layout_marginTop="34dp"
+           android:layout_marginTop="64dp"
            android:layout_marginStart="20dp"
            android:layout_marginEnd="19dp"
            android:layout_marginBottom="16dp"
@@ -121,6 +128,8 @@
 
            android:background="@drawable/roundshapebutton"
            />
+
+
 
    </RelativeLayout>
 

@@ -5,20 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".WelcomeScreen"
-    android:background="@color/white">
+    android:background="@color/white"
+    >
 
 
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="202dp"
+
+
             android:layout_marginBottom="16dp">
 
             <ImageView
                 android:id="@+id/hands3D"
                 android:layout_width="496dp"
                 android:layout_height="272dp"
+                android:layout_marginTop="202dp"
                 android:layout_marginStart="-79dp"
                 android:layout_marginEnd="-79dp"
                 android:layout_marginBottom="-79dp"

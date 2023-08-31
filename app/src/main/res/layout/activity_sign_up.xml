@@ -104,7 +104,7 @@
             android:layout_below="@id/sign_up_newTextPassword"/>
 
         <Button
-            android:id="@+id/create_new_password_button"
+            android:id="@+id/sign_up_button"
             android:layout_width="336dp"
             android:layout_height="56dp"
             android:layout_marginTop="16dp"
@@ -116,12 +116,14 @@
 
 
         <LinearLayout
+            android:id="@+id/sign_in_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginStart="49dp"
             android:layout_marginTop="202dp"
-            android:layout_below="@id/create_new_password_button"
+            android:layout_below="@id/sign_up_button"
+            android:clickable="true"
             >
 
             <TextView
