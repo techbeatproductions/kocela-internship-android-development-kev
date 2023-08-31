@@ -3,34 +3,179 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".articles"
-    android:background="@color/white">
+    android:background="@android:color/transparent">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        >
 
         <androidx.cardview.widget.CardView
             android:id="@+id/articles_img_container"
             android:layout_width="match_parent"
             android:layout_height="384dp"
+            app:cardCornerRadius="24dp"
+            android:layout_marginBottom="-20dp"
 
             android:background="@drawable/news_card_container_drawable">
 
-            <ImageView
-                android:id="@+id/imageView"
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/article_image"
-                android:scaleType="centerCrop"
-                android:background="@drawable/news_card_container_drawable"/>
+                >
+
+                <ImageView
+                    android:id="@+id/article_img_actual"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/news_card_container_drawable"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/article_image"
+                    />
+
+                <ImageView
+                    android:id="@+id/back_button_with_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/back_icon"
+                    android:layout_below="@id/article_img_actual"
+                    android:layout_marginTop="-310dp"
+                    android:layout_marginStart="20dp"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <ImageView
+                    android:id="@+id/bookmark_button_with_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/bookmark_icon"
+                    android:layout_below="@id/article_img_actual"
+                    android:layout_toEndOf="@id/back_button_with_icon"
+                    android:layout_marginTop="-310dp"
+                    android:layout_marginStart="294dp"/>
+
+                <ImageView
+                    android:id="@+id/share_button_with_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/share_icon"
+                    android:layout_below="@id/bookmark_button_with_icon"
+                    android:layout_toEndOf="@id/back_button_with_icon"
+                    android:layout_marginStart="294dp"
+                    android:layout_marginTop="24dp"
+                    />
+
+                <Button
+                    android:id="@+id/news_article_button"
+                    android:layout_width="100dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/article_button"
+                    android:text="@string/us_election"
+                    android:fontFamily="@font/sfsemibold"
+                    android:textSize="12sp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:layout_below="@id/back_button_with_icon"
+                    android:layout_marginTop="70dp"
+                    android:layout_marginStart="20dp"/>
+
+                <TextView
+                    android:id="@+id/news_headline_txt_view"
+                    android:layout_width="336dp"
+                    android:layout_height="56dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/sfbold"
+                    android:textSize="20sp"
+                    android:text="@string/the_latest_situation_in_the_presidential_election"
+                    android:layout_below="@id/news_article_button"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"/>
+
+                <ImageView
+                    android:id="@+id/author_img_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/profile_icon_shape"
+                    android:src="@drawable/author_pic"
+                    android:layout_below="@id/news_headline_txt_view"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"/>
+
+                <TextView
+                    android:id="@+id/author_name_txt_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/sfsemibold"
+                    android:textSize="16sp"
+                    android:text="@string/john_doe"
+                    android:layout_toEndOf="@id/author_img_view"
+                    android:layout_below="@id/news_headline_txt_view"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="16dp"/>
+
+                <TextView
+                    android:id="@+id/author_title_txt_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/author_name_txt_view"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="-10dp"
+                    android:layout_marginEnd="40dp"
+                    android:layout_marginBottom="40dp"
+                    android:layout_toEndOf="@id/author_img_view"
+                    android:fontFamily="@font/sfregular"
+                    android:text="@string/designer"
+                    android:textColor="@color/gray_light"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/news_article_content_container"
             android:layout_width="match_parent"
             android:layout_height="444dp"
             android:background="@drawable/news_card_container_drawable"
-            android:layout_below="@id/articles_img_container"/>
+            android:layout_below="@id/articles_img_container"
+            app:cardCornerRadius="24dp"
+            android:layout_marginTop="-15dp"
+            android:layout_marginBottom="-20dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/results_txt_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/results"
+                    android:fontFamily="@font/sfsemibold"
+                    android:textSize="16sp"
+                    android:textColor="@color/black_primary"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="20dp"
+                    />
+
+                <TextView
+                    android:id="@+id/full_article_txt_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/results_txt_view"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/sfregular"
+                    android:lineSpacingExtra="15sp"
+                    android:text="@string/new_article_text"
+                    android:textSize="16sp"
+                    />
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
     </RelativeLayout>
 </ScrollView>
