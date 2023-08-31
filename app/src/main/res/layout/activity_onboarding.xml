@@ -29,7 +29,7 @@
 
        <androidx.cardview.widget.CardView
            android:id="@+id/onboardingimgcentercontainer"
-           android:layout_width="288dp"
+           android:layout_width="244dp"
            android:layout_height="336dp"
 
            android:layout_marginStart="28dp"
@@ -44,6 +44,7 @@
                android:id="@+id/onboardingimgcenter"
                android:layout_width="match_parent"
                android:layout_height="match_parent"
+               android:scaleType="fitXY"
                android:contentDescription="onboarding center image"
                app:srcCompat="@drawable/onboardingimgcenter" />
 
@@ -72,7 +73,7 @@
            android:layout_height="8dp"
            android:src="@drawable/steps"
            android:layout_below="@id/onboardingimgcentercontainer"
-           android:layout_marginTop="40dp"
+           android:layout_marginTop="30dp"
            android:layout_marginStart="150dp"
            android:layout_marginEnd="160dp"
            />
@@ -83,7 +84,7 @@
            android:layout_height="32dp"
            android:layout_marginStart="80dp"
            android:layout_marginEnd="79dp"
-           android:layout_marginTop="34dp"
+           android:layout_marginTop="24dp"
            android:fontFamily="@font/sfsemibold"
 
            android:text="@string/first_to_know"
@@ -97,7 +98,7 @@
            android:id="@+id/allnewstextonboarding"
            android:layout_width="216dp"
            android:layout_height="48dp"
-           android:layout_marginStart="80dp"
+           android:layout_marginStart="68dp"
            android:layout_marginTop="24dp"
            android:text="@string/all_news_in_one_place_be_the_first_to_know_last_news"
            android:textAlignment="center"
@@ -109,7 +110,7 @@
            android:id="@+id/next_onboarding_button"
            android:layout_width="336dp"
            android:layout_height="wrap_content"
-           android:layout_marginTop="64dp"
+           android:layout_marginTop="34dp"
            android:layout_marginStart="20dp"
            android:layout_marginEnd="19dp"
            android:layout_marginBottom="16dp"

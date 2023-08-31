@@ -31,7 +31,7 @@
         <TextView
             android:id="@+id/hello_sign_up_text_view"
             android:layout_width="336dp"
-            android:layout_height="48dp"
+            android:layout_height="68dp"
             android:text="@string/hello_i_guess_you_are_new_around_here_you_can_start_using_the_application_after_sign_up"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/sfregular"

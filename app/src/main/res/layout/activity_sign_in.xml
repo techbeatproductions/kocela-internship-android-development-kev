@@ -48,7 +48,7 @@
             android:hint="@string/email_address_hint"
             android:textColorHint="@color/gray_primary"
             android:inputType="textEmailAddress"
-            android:paddingLeft="24dp"
+            android:paddingStart="24dp"
             android:layout_below="@id/welcomebacktxt"/>
 
         <EditText
@@ -63,7 +63,7 @@
             android:hint="@string/password_hint"
             android:textColorHint="@color/gray_primary"
             android:inputType="textPassword"
-            android:paddingLeft="24dp"
+            android:paddingStart="24dp"
             android:layout_below="@id/sign_in_editTextTextEmailAddress"/>
 
         <TextView
@@ -71,7 +71,7 @@
             android:layout_width="138dp"
             android:layout_height="24dp"
             android:layout_marginTop="16dp"
-            android:layout_marginStart="218dp"
+            android:layout_marginStart="158dp"
 
             android:gravity="center_horizontal"
             android:textColor="@color/gray_primary"
@@ -94,7 +94,7 @@
             android:id="@+id/or_txt_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="179dp"
+            android:layout_marginStart="139dp"
             android:text="@string/or"
             android:fontFamily="@font/sfsemibold"
             android:textSize="16sp"
@@ -114,9 +114,9 @@
             android:layout_marginTop="48dp"
             android:textAllCaps="false"
             android:drawableStart="@drawable/google_button_drawable"
-            android:paddingStart="16sp"
-            android:paddingEnd="92dp"
-            android:drawablePadding="52sp"
+            android:paddingStart="12sp"
+            android:paddingEnd="72dp"
+            android:drawablePadding="19sp"
             android:layout_gravity="center_horizontal"
             android:layout_below="@id/or_txt_view"
            />
@@ -129,11 +129,11 @@
             android:text="@string/sign_in_with_facebook"
             android:textColor="@color/gray_darker"
             android:layout_marginTop="16sp"
-            android:drawablePadding="52sp"
+            android:drawablePadding="19sp"
             android:textAllCaps="false"
             android:drawableStart="@drawable/facebook_button_drawable"
             android:paddingStart="16sp"
-            android:paddingEnd="92dp"
+            android:paddingEnd="72dp"
             android:layout_gravity="center_horizontal"
             android:layout_below="@id/signinwithgooglebutton"
             />
