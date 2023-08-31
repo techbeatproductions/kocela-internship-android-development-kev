@@ -17,19 +17,19 @@ public class WelcomeScreen extends AppCompatActivity {
 
         getStarted_welcome_screen = (Button)findViewById(R.id.get_started_button_welcome_screen);
 
-        onclicklisteners(getStarted_welcome_screen, "yeeeeess");
+        onclicklisteners();
 
     }
 
-    private int onclicklisteners(Button bt, String messagen) {
+    private void onclicklisteners() {
 
-        bt.setOnClickListener(new View.OnClickListener() {
+        getStarted_welcome_screen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(WelcomeScreen.this, SignIn.class));
             }
         });
 
-        return 0;
+
     }
 }
