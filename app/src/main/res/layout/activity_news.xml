@@ -43,6 +43,7 @@
             android:ems="10"
             android:inputType="text"
             android:hint="@string/search_string_text"
+            android:textColorHint="@color/gray_primary"
             android:text=""
             android:drawableStart="@drawable/search_button_drawable"
             android:drawableEnd="@drawable/microphone_button_drawable"
@@ -121,112 +122,15 @@
         </HorizontalScrollView>
 
 
-        <androidx.cardview.widget.CardView
-
-            android:id="@+id/news_item_container"
+        <ListView
+            android:id="@+id/news_list_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/news_item_design"
             android:layout_below="@id/news_buttons_container"
-
-            android:layout_marginTop="24dp"
-            app:cardCornerRadius="24dp"
+            android:layout_marginTop="24dp"/>
 
 
-            android:background="@drawable/news_card_container_drawable">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white">
-
-                <ImageView
-                    android:id="@+id/news_image2"
-                    android:layout_width="match_parent"
-                    android:layout_height="192dp"
-                    android:layout_marginTop="0dp"
-                    android:src="@drawable/newsimage"
-                    android:background="@drawable/news_image_container"
-                    android:scaleType="fitXY"
-                    />
-
-                <TextView
-                    android:id="@+id/news_title2"
-                    android:layout_width="224dp"
-                    android:layout_height="48dp"
-                    android:layout_marginTop="16sp"
-                    android:layout_marginStart="16sp"
-                    android:layout_marginBottom="16sp"
-                    android:textSize="16sp"
-                    android:textColor="@color/black_primary"
-                    android:fontFamily="@font/sfsemibold"
-                    android:text="@string/a_simple_trick_for_creating_color_palettes_quickly"
-                    android:layout_below="@id/news_image2"/>
-
-                <ImageView
-                    android:id="@+id/imageView4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/bookmark"
-                    android:layout_toEndOf="@id/news_title2"
-                    android:layout_marginStart="34dp"
-                    android:layout_marginTop="28sp"
-
-                    android:layout_below="@id/news_image2"/>
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-
-            android:id="@+id/news_item_container2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/news_item_container"
-
-            android:layout_marginTop="24dp"
-            app:cardCornerRadius="24dp"
-            android:layout_marginBottom="-20dp"
-
-            android:background="@drawable/news_card_container_drawable">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/news_image3"
-                    android:layout_width="match_parent"
-                    android:layout_height="192dp"
-                    android:layout_marginTop="0dp"
-                    android:src="@drawable/newsimage"
-                    android:background="@drawable/news_image_container"
-                    android:scaleType="fitXY"
-                    />
-
-                <TextView
-                    android:id="@+id/news_title3"
-                    android:layout_width="224dp"
-                    android:layout_height="48dp"
-                    android:layout_marginTop="16sp"
-                    android:layout_marginStart="16sp"
-                    android:layout_marginBottom="16sp"
-                    android:textSize="16sp"
-                    android:textColor="@color/black_primary"
-                    android:fontFamily="@font/sfsemibold"
-                    android:text="@string/a_simple_trick_for_creating_color_palettes_quickly"
-                    android:layout_below="@id/news_image3"/>
-
-                <ImageView
-                    android:id="@+id/imageView5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/bookmark"
-                    android:layout_toEndOf="@id/news_title3"
-                    android:layout_marginStart="34dp"
-                    android:layout_marginTop="28sp"
-
-                    android:layout_below="@id/news_image3"/>
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
 
 
 
