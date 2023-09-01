@@ -13,14 +13,15 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="72dp"
+
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="124dp">
+        >
 
         <TextView
             android:id="@+id/select_your_favorite_topics_text_view"
             android:layout_width="336dp"
             android:layout_height="32dp"
+            android:layout_marginTop="72dp"
             android:text="@string/select_your_favorite_topics"
             android:fontFamily="@font/sfsemibold"
             android:textSize="24sp"
@@ -43,8 +44,8 @@
 
         <LinearLayout
             android:id="@+id/first_topics_container"
-            android:layout_width="336dp"
-            android:layout_height="72dp"
+            android:layout_width="338dp"
+            android:layout_height="74dp"
             android:orientation="horizontal"
 
             android:layout_marginTop="32dp"
@@ -81,8 +82,8 @@
 
         <LinearLayout
             android:id="@+id/second_topics_group_container"
-            android:layout_width="336dp"
-            android:layout_height="72dp"
+            android:layout_width="338dp"
+            android:layout_height="74dp"
             android:orientation="horizontal"
 
             android:layout_marginTop="16dp"
@@ -119,8 +120,8 @@
 
         <LinearLayout
             android:id="@+id/third_topics_group_container"
-            android:layout_width="336dp"
-            android:layout_height="72dp"
+            android:layout_width="338dp"
+            android:layout_height="74dp"
             android:orientation="horizontal"
 
             android:layout_marginTop="16dp"
@@ -156,8 +157,8 @@
 
         <LinearLayout
             android:id="@+id/fourth_topic_group_container"
-            android:layout_width="336dp"
-            android:layout_height="72dp"
+            android:layout_width="338dp"
+            android:layout_height="74dp"
             android:orientation="horizontal"
 
             android:layout_marginTop="16dp"
@@ -193,8 +194,8 @@
 
         <LinearLayout
             android:id="@+id/fifth_topic_group_container"
-            android:layout_width="336dp"
-            android:layout_height="72dp"
+            android:layout_width="338dp"
+            android:layout_height="74dp"
             android:orientation="horizontal"
 
             android:layout_marginTop="16dp"
@@ -229,7 +230,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/next_fav_topic_button"
             android:layout_width="336dp"
             android:layout_height="56dp"
             android:layout_marginTop="16dp"

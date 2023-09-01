@@ -73,12 +73,14 @@
             android:layout_marginTop="16dp"
             android:layout_marginStart="158dp"
             android:clickable="true"
+            android:onClick="OnClickListeners"
 
             android:gravity="center_horizontal"
             android:textColor="@color/gray_primary"
             android:fontFamily="@font/sfmedium"
             android:text="@string/forgot_password"
-            android:layout_below="@id/editTextTextPassword"/>
+            android:layout_below="@id/editTextTextPassword"
+            android:focusable="true" />
 
         <Button
             android:id="@+id/signinbutton"
@@ -89,6 +91,7 @@
             android:textAllCaps="false"
             android:background="@drawable/roundshapebutton"
             android:text="@string/sign_in"
+            android:onClick="OnClickListeners"
             android:layout_below="@id/forgot_password_clickable_txt"/>
 
         <TextView
@@ -120,6 +123,7 @@
             android:drawablePadding="19sp"
             android:layout_gravity="center_horizontal"
             android:layout_below="@id/or_txt_view"
+            android:onClick="OnClickListeners"
            />
 
         <Button
@@ -137,9 +141,11 @@
             android:paddingEnd="72dp"
             android:layout_gravity="center_horizontal"
             android:layout_below="@id/signinwithgooglebutton"
+            android:onClick="OnClickListeners"
             />
 
         <LinearLayout
+            android:id="@+id/sign_in_sign_up_redirect"
             android:layout_width="245dp"
             android:layout_height="32dp"
             android:orientation="horizontal"
@@ -147,7 +153,8 @@
             android:layout_marginTop="50dp"
             android:layout_marginEnd="65dp"
             android:textAlignment="center"
-            android:layout_below="@id/signinwithfacebookbutton">
+            android:layout_below="@id/signinwithfacebookbutton"
+            android:onClick="OnClickListeners">
 
             <TextView
                 android:id="@+id/textView7"

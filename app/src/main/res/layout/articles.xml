@@ -54,7 +54,9 @@
                     android:layout_below="@id/article_img_actual"
                     android:layout_toEndOf="@id/back_button_with_icon"
                     android:layout_marginTop="-310dp"
-                    android:layout_marginStart="294dp"/>
+                    android:layout_marginStart="284dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_alignParentEnd="true"/>
 
                 <ImageView
                     android:id="@+id/share_button_with_icon"
@@ -63,8 +65,10 @@
                     android:src="@drawable/share_icon"
                     android:layout_below="@id/bookmark_button_with_icon"
                     android:layout_toEndOf="@id/back_button_with_icon"
-                    android:layout_marginStart="294dp"
+                    android:layout_marginStart="284dp"
                     android:layout_marginTop="24dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_alignParentEnd="true"
                     />
 
                 <Button
@@ -146,7 +150,8 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@color/white">
 
                 <TextView
                     android:id="@+id/results_txt_view"
@@ -173,6 +178,7 @@
                     android:lineSpacingExtra="15sp"
                     android:text="@string/new_article_text"
                     android:textSize="16sp"
+                    android:textColor="@color/gray_primary"
 
                     />
             </RelativeLayout>
