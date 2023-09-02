@@ -49,6 +49,7 @@
             android:textColorHint="@color/gray_primary"
             android:inputType="textEmailAddress"
             android:paddingStart="24dp"
+            android:paddingEnd="24dp"
             android:layout_below="@id/welcomebacktxt"/>
 
         <EditText

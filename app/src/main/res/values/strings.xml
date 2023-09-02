@@ -55,4 +55,5 @@
     <string name="designer">Designer</string>
     <string name="results">Results</string>
     <string name="new_article_text">Leads in individual states may change from one party to another as all the votes are counted. Select a state for detailed results, and select the Senate, House or Governor tabs to view those races. For more detailed state results click on the States A-Z links at the bottom of this page. Results source: NEP/Edison via Reuters. Leads in individual states may change from one party to another as all the votes are counted. Select a state for detailed results, and select the Senate, House or Governor tabs to view those races. For more detailed state results click on the States A-Z links at the bottom of this page. Results source: NEP/Edison via Reuters.</string>
+    <string name="api_key">7c999e7db25f4894b27af4a416401509</string>
 </resources>

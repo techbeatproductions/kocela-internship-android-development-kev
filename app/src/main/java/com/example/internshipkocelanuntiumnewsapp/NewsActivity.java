@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import com.kwabenaberko.newsapilib.NewsApiClient;
+import com.kwabenaberko.newsapilib.models.request.EverythingRequest;
 import com.kwabenaberko.newsapilib.models.request.TopHeadlinesRequest;
 import com.kwabenaberko.newsapilib.models.response.ArticleResponse;
 
@@ -26,11 +27,14 @@ public class NewsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_news);
 
 
-        newsListView = findViewById(R.id.news_list_view);
+        newsListView = (ListView) findViewById(R.id.news_list_view);
+
         NewsAdapter newsAdapter = new NewsAdapter(this, nuntiumNews);
         newsListView.setAdapter(newsAdapter);
 
         newsBtn = (Button) findViewById(R.id.random_news_button);
+
+        getNews();
         onClickListeners();
     }
 
@@ -39,27 +43,28 @@ public class NewsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(NewsActivity.this, articles.class));
+
+
             }
         });
     }
 
     void getNews(){
-        NewsApiClient newsApiClient = new NewsApiClient(7c999e7db25f4894b27af4a416401509);
-        newsApiClient.getTopHeadlines(
-                new TopHeadlinesRequest.Builder()
-                        .language("en")
+        NewsApiClient newsApiClient = new NewsApiClient("7c999e7db25f4894b27af4a416401509");
+        // /v2/everything
+        newsApiClient.getEverything(
+                new EverythingRequest.Builder()
+                        .q("trump")
                         .build(),
-
                 new NewsApiClient.ArticlesResponseCallback() {
                     @Override
                     public void onSuccess(ArticleResponse response) {
-                        Log.i("Got response",response.toString());
+                        System.out.println(response.getArticles().get(0).getTitle());
                     }
 
                     @Override
                     public void onFailure(Throwable throwable) {
-                        Log.i("Got Failure", throwable.getMessage());
-
+                        System.out.println(throwable.getMessage());
                     }
                 }
         );
