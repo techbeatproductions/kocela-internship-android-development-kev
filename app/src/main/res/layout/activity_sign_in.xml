@@ -53,7 +53,7 @@
             android:layout_below="@id/welcomebacktxt"/>
 
         <EditText
-            android:id="@+id/editTextTextPassword"
+            android:id="@+id/sign_in_editTextTextPassword"
             android:layout_width="336dp"
             android:layout_height="56dp"
             android:layout_marginTop="16dp"
@@ -80,7 +80,7 @@
             android:textColor="@color/gray_primary"
             android:fontFamily="@font/sfmedium"
             android:text="@string/forgot_password"
-            android:layout_below="@id/editTextTextPassword"
+            android:layout_below="@id/sign_in_editTextTextPassword"
             android:focusable="true" />
 
         <Button

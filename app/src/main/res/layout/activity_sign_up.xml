@@ -41,7 +41,7 @@
             />
 
         <EditText
-            android:id="@+id/sign_up_editTextText"
+            android:id="@+id/sign_up_user_name_editTextText"
             android:layout_width="336dp"
             android:layout_height="56dp"
             android:layout_marginTop="32dp"
@@ -71,7 +71,7 @@
             android:textColorHint="@color/gray_primary"
             android:inputType="textEmailAddress"
             android:paddingStart="24dp"
-            android:layout_below="@id/sign_up_editTextText"/>
+            android:layout_below="@id/sign_up_user_name_editTextText"/>
 
         <EditText
             android:id="@+id/sign_up_newTextPassword"

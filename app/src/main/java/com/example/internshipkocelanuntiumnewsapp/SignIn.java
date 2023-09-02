@@ -1,6 +1,7 @@
 package com.example.internshipkocelanuntiumnewsapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,16 +17,19 @@ public class SignIn extends AppCompatActivity {
 
     Button signIn,googleSignIn,faceBookSignIn;
     TextView forgotPassword,or;
-    EditText email;
-    LinearLayout signUp;
+    EditText email,password;
+    LinearLayout signUp,signUp_redirect;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
         email = findViewById(R.id.sign_in_editTextTextEmailAddress);
+        password = findViewById(R.id.sign_in_editTextTextPassword);
+
         googleSignIn = findViewById(R.id.signinwithgooglebutton);
         faceBookSignIn = findViewById(R.id.signinwithfacebookbutton);
         or = findViewById(R.id.or_txt_view);
+        signUp_redirect = findViewById(R.id.sign_in_sign_up_redirect);
 
         email.addTextChangedListener(new TextWatcher() {
             @Override
@@ -39,9 +43,28 @@ public class SignIn extends AppCompatActivity {
                 if(charSequence.length() > 0){
                 googleSignIn.setVisibility(View.INVISIBLE);
                 faceBookSignIn.setVisibility(View.INVISIBLE);
+                signUp_redirect.setVisibility(View.INVISIBLE);
+                or.setVisibility(View.INVISIBLE);
+
+                email.setTextColor(getColor(R.color.gray_darker));
+                email.setBackgroundResource(R.drawable.rounded_corner_edit_text_typing);
+                email.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.envelope_typing_state,0,0,0);
+
+                password.setTextColor(getColor(R.color.gray_darker));
+                password.setBackgroundResource(R.drawable.rounded_corner_edit_text_typing);
+                password.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.padlock_typing_state,0,0,R.drawable.eye);
+
+
                 }else {
                     googleSignIn.setVisibility(View.VISIBLE);
                     faceBookSignIn.setVisibility(View.VISIBLE);
+                    signUp_redirect.setVisibility(View.VISIBLE);
+                    or.setVisibility(View.VISIBLE);
+
+                    email.setBackgroundResource(R.drawable.rounded_corner_view);
+                    email.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.envelope,0,0,0);
+                    password.setBackgroundResource(R.drawable.rounded_corner_view);
+                    password.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.padlock,0,0,0);
                 }
 
             }
