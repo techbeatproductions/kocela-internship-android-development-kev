@@ -46,28 +46,7 @@ public class NewsActivity extends AppCompatActivity {
 
     }
 
-    private void getNews(){
-        NewsApiClient newsApiClient = new NewsApiClient("7c999e7db25f4894b27af4a416401509");
 
-// /v2/everything
-        newsApiClient.getEverything(
-                new EverythingRequest.Builder()
-                        .q("trump")
-                        .build(),
-                new NewsApiClient.ArticlesResponseCallback() {
-
-                    @Override
-                    public void onSuccess(ArticleResponse response) {
-
-                    }
-
-                    @Override
-                    public void onFailure(Throwable throwable) {
-                        System.out.println(throwable.getMessage());
-                    }
-                }
-        );
-    }
 
 
 
