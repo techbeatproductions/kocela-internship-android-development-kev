@@ -11,6 +11,9 @@ import android.widget.ListView;
 import com.example.internshipkocelanuntiumnewsapp.Models.News;
 import com.example.internshipkocelanuntiumnewsapp.adapter.NewsAdapter;
 import com.example.internshipkocelanuntiumnewsapp.R;
+import com.kwabenaberko.newsapilib.NewsApiClient;
+import com.kwabenaberko.newsapilib.models.request.EverythingRequest;
+import com.kwabenaberko.newsapilib.models.response.ArticleResponse;
 
 
 import java.util.ArrayList;
@@ -35,24 +38,35 @@ public class NewsActivity extends AppCompatActivity {
         //Get the ListView and attach the adapter
         newsListView = findViewById(R.id.news_list_view);
 
-        News n = new News("none", "Test 1", "none","none", "none", "none", "none");
-        News n2 = new News("none", "Test 2", "none","none", "none", "none", "none");
-        News n3 = new News("none", "Test 3", "none","none", "none", "none", "none");
-        News n4 = new News("none", "Test 4", "none","none", "none", "none", "none");
-
-        nuntiumNews.add(n);
-        nuntiumNews.add(n2);
-        nuntiumNews.add(n3);
-        nuntiumNews.add(n4);
-
-
-
         newsListView.setAdapter(newsAdapter);
 
         newsBtn = (Button) findViewById(R.id.random_news_button);
 
         onClickListeners();
 
+    }
+
+    private void getNews(){
+        NewsApiClient newsApiClient = new NewsApiClient("7c999e7db25f4894b27af4a416401509");
+
+// /v2/everything
+        newsApiClient.getEverything(
+                new EverythingRequest.Builder()
+                        .q("trump")
+                        .build(),
+                new NewsApiClient.ArticlesResponseCallback() {
+
+                    @Override
+                    public void onSuccess(ArticleResponse response) {
+
+                    }
+
+                    @Override
+                    public void onFailure(Throwable throwable) {
+                        System.out.println(throwable.getMessage());
+                    }
+                }
+        );
     }
 
 

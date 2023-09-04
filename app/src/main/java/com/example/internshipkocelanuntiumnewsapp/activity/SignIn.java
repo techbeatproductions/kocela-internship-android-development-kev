@@ -9,6 +9,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -20,12 +21,14 @@ public class SignIn extends AppCompatActivity {
     TextView forgotPassword,or;
     EditText email,password;
     LinearLayout signUp,signUp_redirect;
+    ImageView eye;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
         email = findViewById(R.id.sign_in_editTextTextEmailAddress);
         password = findViewById(R.id.sign_in_editTextTextPassword);
+        eye = findViewById(R.id.eye_show_password_sign_in);
 
         googleSignIn = findViewById(R.id.signinwithgooglebutton);
         faceBookSignIn = findViewById(R.id.signinwithfacebookbutton);
@@ -53,7 +56,10 @@ public class SignIn extends AppCompatActivity {
 
                 password.setTextColor(getColor(R.color.gray_darker));
                 password.setBackgroundResource(R.drawable.rounded_corner_edit_text_typing);
-                password.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.padlock_typing_state,0,0,R.drawable.eye);
+                password.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.padlock_typing_state,0,0,0);
+                eye.setVisibility(View.VISIBLE);
+
+
 
 
 
@@ -67,6 +73,57 @@ public class SignIn extends AppCompatActivity {
                     email.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.envelope,0,0,0);
                     password.setBackgroundResource(R.drawable.rounded_corner_view);
                     password.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.padlock,0,0,0);
+                    eye.setVisibility(View.INVISIBLE);
+
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+        password.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                if(charSequence.length() > 0){
+                    googleSignIn.setVisibility(View.INVISIBLE);
+                    faceBookSignIn.setVisibility(View.INVISIBLE);
+                    signUp_redirect.setVisibility(View.INVISIBLE);
+                    or.setVisibility(View.INVISIBLE);
+
+                    email.setTextColor(getColor(R.color.gray_darker));
+                    email.setBackgroundResource(R.drawable.rounded_corner_edit_text_typing);
+                    email.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.envelope_typing_state,0,0,0);
+
+                    password.setTextColor(getColor(R.color.gray_darker));
+                    password.setBackgroundResource(R.drawable.rounded_corner_edit_text_typing);
+                    password.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.padlock_typing_state,0,0,0);
+                    eye.setVisibility(View.VISIBLE);
+
+
+
+
+
+                }else {
+                    googleSignIn.setVisibility(View.VISIBLE);
+                    faceBookSignIn.setVisibility(View.VISIBLE);
+                    signUp_redirect.setVisibility(View.VISIBLE);
+                    or.setVisibility(View.VISIBLE);
+
+                    email.setBackgroundResource(R.drawable.rounded_corner_view);
+                    email.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.envelope,0,0,0);
+                    password.setBackgroundResource(R.drawable.rounded_corner_view);
+                    password.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.padlock,0,0,0);
+                    eye.setVisibility(View.INVISIBLE);
 
                 }
 

@@ -6,6 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
     android:background="@color/white"
     tools:context=".activity.Onboarding">
 
@@ -59,6 +60,7 @@
            android:layout_height="@dimen/onnboard_dimens"
            android:layout_marginTop="144dp"
            android:layout_marginStart="28dp"
+           android:layout_alignParentEnd="true"
 
 
 
@@ -93,6 +95,7 @@
            android:layout_marginEnd="79dp"
            android:layout_marginTop="34dp"
            android:fontFamily="@font/sfsemibold"
+
 
            android:text="@string/first_to_know"
            android:textAlignment="center"

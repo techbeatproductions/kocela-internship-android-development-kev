@@ -52,23 +52,41 @@
             android:paddingEnd="24dp"
             android:layout_below="@id/welcomebacktxt"/>
 
-        <EditText
-            android:id="@+id/sign_in_editTextTextPassword"
-            android:layout_width="336dp"
-            android:layout_height="56dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/rounded_corner_view"
-            android:drawableStart="@drawable/padlock"
-            android:drawableEnd="@drawable/eye"
 
-            android:paddingHorizontal="24dp"
-            android:drawablePadding="24dp"
-            android:ems="10"
-            android:hint="@string/password_hint"
-            android:textColorHint="@color/gray_primary"
-            android:inputType="textPassword"
-            android:paddingStart="24dp"
-            android:layout_below="@id/sign_in_editTextTextEmailAddress"/>
+        <RelativeLayout
+            android:id="@+id/sign_in_password_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_below="@id/sign_in_editTextTextEmailAddress">
+
+            <EditText
+                android:id="@+id/sign_in_editTextTextPassword"
+                android:layout_width="336dp"
+                android:layout_height="56dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_corner_view"
+                android:drawableStart="@drawable/padlock"
+
+                android:drawablePadding="24dp"
+                android:ems="10"
+                android:hint="@string/password_hint"
+                android:inputType="textPassword"
+                android:paddingHorizontal="24dp"
+                android:textColorHint="@color/gray_primary"
+
+
+                />
+
+            <ImageView
+                android:id="@+id/eye_show_password_sign_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="34dp"
+                android:layout_marginStart="-50dp"
+                android:layout_toEndOf="@id/sign_in_editTextTextPassword"
+                android:src="@drawable/eye" />
+        </RelativeLayout>
 
         <TextView
             android:id="@+id/forgot_password_clickable_txt"
@@ -83,7 +101,7 @@
             android:textColor="@color/gray_primary"
             android:fontFamily="@font/sfmedium"
             android:text="@string/forgot_password"
-            android:layout_below="@id/sign_in_editTextTextPassword"
+            android:layout_below="@id/sign_in_password_container"
             android:focusable="true" />
 
         <Button
