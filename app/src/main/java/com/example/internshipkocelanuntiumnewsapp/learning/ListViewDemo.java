@@ -1,9 +1,13 @@
-package com.example.internshipkocelanuntiumnewsapp;
+package com.example.internshipkocelanuntiumnewsapp.learning;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.ListView;
+
+import com.example.internshipkocelanuntiumnewsapp.R;
+import com.example.internshipkocelanuntiumnewsapp.learning.Animals;
+import com.example.internshipkocelanuntiumnewsapp.learning.AnimalsAdapter;
 
 import java.util.ArrayList;
 

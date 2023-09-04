@@ -1,4 +1,4 @@
-package com.example.internshipkocelanuntiumnewsapp;
+package com.example.internshipkocelanuntiumnewsapp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.internshipkocelanuntiumnewsapp.R;
 
 public class select_your_favorite_topics extends AppCompatActivity {
 
@@ -47,6 +49,7 @@ public class select_your_favorite_topics extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                bt1.setBackgroundResource(R.drawable.roundshapebutton);
+                bt1.setTextColor(getColor(R.color.white));
             }
         });
 
@@ -54,6 +57,7 @@ public class select_your_favorite_topics extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 bt2.setBackgroundResource(R.drawable.roundshapebutton);
+                bt2.setTextColor(getColor(R.color.white));
             }
         });
 
@@ -61,6 +65,7 @@ public class select_your_favorite_topics extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 bt3.setBackgroundResource(R.drawable.roundshapebutton);
+                bt3.setTextColor(getColor(R.color.white));
             }
         });
 
@@ -68,6 +73,7 @@ public class select_your_favorite_topics extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 bt4.setBackgroundResource(R.drawable.roundshapebutton);
+                bt4.setTextColor(getColor(R.color.white));
             }
         });
 
@@ -75,6 +81,7 @@ public class select_your_favorite_topics extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 bt5.setBackgroundResource(R.drawable.roundshapebutton);
+                bt5.setTextColor(getColor(R.color.white));
             }
         });
 
@@ -82,6 +89,7 @@ public class select_your_favorite_topics extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 bt6.setBackgroundResource(R.drawable.roundshapebutton);
+                bt6.setTextColor(getColor(R.color.white));
             }
         });
 
@@ -89,6 +97,7 @@ public class select_your_favorite_topics extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 bt7.setBackgroundResource(R.drawable.roundshapebutton);
+                bt7.setTextColor(getColor(R.color.white));
             }
         });
 
@@ -96,6 +105,7 @@ public class select_your_favorite_topics extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 bt8.setBackgroundResource(R.drawable.roundshapebutton);
+                bt8.setTextColor(getColor(R.color.white));
             }
         });
 
@@ -103,6 +113,7 @@ public class select_your_favorite_topics extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 bt9.setBackgroundResource(R.drawable.roundshapebutton);
+                bt9.setTextColor(getColor(R.color.white));
             }
         });
 
@@ -110,6 +121,7 @@ public class select_your_favorite_topics extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 bt10.setBackgroundResource(R.drawable.roundshapebutton);
+                bt10.setTextColor(getColor(R.color.white));
             }
         });
     }

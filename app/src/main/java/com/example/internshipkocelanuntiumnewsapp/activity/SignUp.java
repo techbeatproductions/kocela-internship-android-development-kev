@@ -1,4 +1,4 @@
-package com.example.internshipkocelanuntiumnewsapp;
+package com.example.internshipkocelanuntiumnewsapp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,7 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.TextView;
+
+import com.example.internshipkocelanuntiumnewsapp.R;
 
 public class SignUp extends AppCompatActivity {
 

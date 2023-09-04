@@ -1,10 +1,12 @@
-package com.example.internshipkocelanuntiumnewsapp;
+package com.example.internshipkocelanuntiumnewsapp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.example.internshipkocelanuntiumnewsapp.R;
 
 public class SplashScreenMain extends AppCompatActivity {
 
@@ -19,7 +21,7 @@ public class SplashScreenMain extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent =new Intent(SplashScreenMain.this,Onboarding.class);
+                Intent intent =new Intent(SplashScreenMain.this, Onboarding.class);
                 startActivity(intent);
                 finish();
 

@@ -1,7 +1,6 @@
-package com.example.internshipkocelanuntiumnewsapp;
+package com.example.internshipkocelanuntiumnewsapp.adapter;
 
 import android.content.Context;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,14 +8,15 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.internshipkocelanuntiumnewsapp.Models.News;
+import com.example.internshipkocelanuntiumnewsapp.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.zip.Inflater;
 
 public class NewsAdapter extends BaseAdapter {
-    Context context;
-    ArrayList<News> newsArrayList ;
+    private Context context; //context
+    private ArrayList<News> newsArrayList ; //data source of the list adapter
 
 
 
@@ -27,18 +27,19 @@ public class NewsAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return newsArrayList.size();
+        return newsArrayList.size(); // returns total of news in the list
     }
 
     @Override
     public Object getItem(int i) {
-        return newsArrayList.get(i);
+        return newsArrayList.get(i); //returns list item at the specified position
     }
 
     @Override
     public long getItemId(int i) {
         return i;
     }
+
 
     @Override
     public View getView(int i, View view, ViewGroup parent) {
@@ -52,16 +53,16 @@ public class NewsAdapter extends BaseAdapter {
         News currentNews = (News)getItem(i);
 
         //get the TextView for headline
-        TextView tvNewsHeadline = (TextView) view.findViewById(R.id.news_title_holder);
+        TextView tvNewsHeadline = view.findViewById(R.id.news_title_holder);
 
         //get the News image
-        ImageView imgNews = (ImageView) view.findViewById(R.id.news_image_holder);
+        ImageView imgNews = view.findViewById(R.id.news_image_holder);
 
         //set the text for headline fom the current object
-        tvNewsHeadline.setText(newsArrayList.get(i).getHeadline());
+        tvNewsHeadline.setText(currentNews.getTitle());
 
         //Set image
-        Picasso.get().load(newsArrayList.get(i).getUrlToImage()).into(imgNews);
+        Picasso.get().load(currentNews.getUrlToImage()).into(imgNews);
 
 
         return view;

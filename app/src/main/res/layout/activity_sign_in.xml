@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignIn"
+    tools:context=".activity.SignIn"
     android:background="@color/white">
 
     <RelativeLayout
@@ -59,6 +59,9 @@
             android:layout_marginTop="16dp"
             android:background="@drawable/rounded_corner_view"
             android:drawableStart="@drawable/padlock"
+            android:drawableEnd="@drawable/eye"
+
+            android:paddingHorizontal="24dp"
             android:drawablePadding="24dp"
             android:ems="10"
             android:hint="@string/password_hint"

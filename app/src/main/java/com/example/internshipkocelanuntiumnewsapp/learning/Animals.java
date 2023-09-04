@@ -1,4 +1,4 @@
-package com.example.internshipkocelanuntiumnewsapp;
+package com.example.internshipkocelanuntiumnewsapp.learning;
 
 public class Animals {
 

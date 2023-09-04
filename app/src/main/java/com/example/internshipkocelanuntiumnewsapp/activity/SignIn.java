@@ -1,7 +1,6 @@
-package com.example.internshipkocelanuntiumnewsapp;
+package com.example.internshipkocelanuntiumnewsapp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.internshipkocelanuntiumnewsapp.R;
 
 public class SignIn extends AppCompatActivity {
 
@@ -55,6 +56,7 @@ public class SignIn extends AppCompatActivity {
                 password.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.padlock_typing_state,0,0,R.drawable.eye);
 
 
+
                 }else {
                     googleSignIn.setVisibility(View.VISIBLE);
                     faceBookSignIn.setVisibility(View.VISIBLE);
@@ -65,6 +67,7 @@ public class SignIn extends AppCompatActivity {
                     email.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.envelope,0,0,0);
                     password.setBackgroundResource(R.drawable.rounded_corner_view);
                     password.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.padlock,0,0,0);
+
                 }
 
             }

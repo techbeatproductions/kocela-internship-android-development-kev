@@ -1,8 +1,10 @@
-package com.example.internshipkocelanuntiumnewsapp;
+package com.example.internshipkocelanuntiumnewsapp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.internshipkocelanuntiumnewsapp.R;
 
 public class articles extends AppCompatActivity {
 

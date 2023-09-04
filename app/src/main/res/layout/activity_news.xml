@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NewsActivity"
+    tools:context=".activity.NewsActivity"
     android:background="@color/white">
 
 
@@ -12,6 +12,7 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginTop="72dp">
@@ -57,13 +58,16 @@
         <HorizontalScrollView
             android:id="@+id/news_buttons_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_below="@id/search_editTextText">
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
                 android:layout_marginTop="24dp"
+               android:paddingVertical="8dp"
                 android:orientation="horizontal">
 
                 <Button
@@ -71,6 +75,7 @@
                     android:layout_width="81dp"
                     android:layout_height="32dp"
                     android:textColor="@color/white"
+                    android:layout_gravity="center"
                     android:textSize="12sp"
                     android:background="@drawable/roundshapebutton"
                     android:fontFamily="@font/sfsemibold"
@@ -84,6 +89,7 @@
                     android:id="@+id/sports_news_button"
                     android:layout_width="81dp"
                     android:layout_height="32dp"
+                    android:layout_gravity="center"
                     android:textColor="@color/gray_primary"
                     android:fontFamily="@font/sfsemibold"
                     android:textSize="12sp"
@@ -99,6 +105,7 @@
                     android:id="@+id/gaming_news_button"
                     android:layout_width="81dp"
                     android:layout_height="32dp"
+                    android:layout_gravity="center"
                     android:textColor="@color/gray_primary"
                     android:textSize="12sp"
                     android:fontFamily="@font/sfsemibold"
@@ -125,14 +132,16 @@
         <ListView
             android:id="@+id/news_list_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:listitem="@layout/news_item_design"
+            android:layout_height="wrap_content"
             android:layout_below="@id/news_buttons_container"
-            android:layout_marginTop="24dp"/>
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+
+           />
 
 
 
 
 
     </RelativeLayout>
-</ScrollView>
+</LinearLayout>

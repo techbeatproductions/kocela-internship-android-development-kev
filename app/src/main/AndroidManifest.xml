@@ -14,50 +14,50 @@
         android:theme="@style/Theme.InternshipKocelaNuntiumNewsApp"
         tools:targetApi="31">
         <activity
-            android:name=".ListViewDemo"
+            android:name=".learning.ListViewDemo"
             android:exported="false" />
         <activity
-            android:name=".articles"
+            android:name=".activity.articles"
             android:exported="false"
             android:theme="@style/Theme.AppCompat" />
         <activity
-            android:name=".NewsActivity"
+            android:name=".activity.NewsActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat" />
         <activity
-            android:name=".select_your_favorite_topics"
+            android:name=".activity.select_your_favorite_topics"
             android:exported="false"
             android:theme="@style/Theme.AppCompat" />
         <activity
-            android:name=".SignUp"
+            android:name=".activity.SignUp"
             android:exported="false"
             android:theme="@style/Theme.AppCompat" />
         <activity
-            android:name=".create_new_password"
+            android:name=".activity.create_new_password"
             android:exported="false"
             android:theme="@style/Theme.AppCompat" />
         <activity
-            android:name=".verification"
+            android:name=".activity.verification"
             android:exported="false"
             android:theme="@style/Theme.AppCompat" />
         <activity
-            android:name=".Forgot_Password"
+            android:name=".activity.Forgot_Password"
             android:exported="false"
             android:theme="@style/Theme.AppCompat" />
         <activity
-            android:name=".SignIn"
+            android:name=".activity.SignIn"
             android:exported="true"
             android:theme="@style/Theme.AppCompat" />
         <activity
-            android:name=".WelcomeScreen"
+            android:name=".activity.WelcomeScreen"
             android:exported="true"
             android:theme="@style/Theme.AppCompat" />
         <activity
-            android:name=".Onboarding"
+            android:name=".activity.Onboarding"
             android:exported="false"
             android:theme="@style/Theme.AppCompat" />
         <activity
-            android:name=".SplashScreenMain"
+            android:name=".activity.SplashScreenMain"
             android:exported="true"
             android:theme="@style/Theme.AppCompat">
             <intent-filter>
