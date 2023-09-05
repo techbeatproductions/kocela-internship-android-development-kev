@@ -1,104 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.NewsActivity"
-    android:background="@color/white">
+    android:background="@color/white"
 
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp"
+    android:paddingTop="72dp">
 
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="52dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
 
         <TextView
             android:id="@+id/homePageTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/browse_text_view"
             android:fontFamily="@font/sfsemibold"
-            android:textSize="24sp"
-            android:textColor="@color/black_primary"/>
+            android:text="@string/browse_text_view"
+            android:textColor="@color/black_primary"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/discover_some_things_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/homePageTitle"
-            android:text="@string/discover_things_of_this_world"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/sfregular"
-            android:textSize="16sp"
-            android:textColor="@color/gray_primary"/>
+            android:text="@string/discover_things_of_this_world"
+            android:textColor="@color/gray_primary"
+            android:textSize="16sp" />
 
-        <EditText
-            android:id="@+id/search_editTextText"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/search_container"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:ems="10"
-            android:inputType="text"
-            android:hint="@string/search_string_text"
-            android:textColorHint="@color/gray_primary"
-            android:text=""
-            android:drawableStart="@drawable/search_button_drawable"
-            android:drawableEnd="@drawable/microphone_button_drawable"
-            android:drawablePadding="24dp"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:layout_below="@id/discover_some_things_text_view"
-            android:background="@drawable/rounded_corner_view"
-            android:layout_marginTop="32dp"
-            android:textColor="@color/gray_primary"/>
+            android:layout_height="wrap_content"
+            android:layout_below="@id/discover_some_things_text_view">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/search_editTextText"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="32dp"
+
+                    android:background="@drawable/rounded_corner_view"
+                    android:drawablePadding="24dp"
+                    android:ems="10"
+
+                    android:hint="@string/search_string_text"
+                    android:inputType="text"
+                    android:paddingStart="66dp"
+
+                    android:paddingEnd="16dp"
+                    android:text=""
+                    android:textColor="@color/gray_primary"
+                    android:textColorHint="@color/gray_primary" />
+
+                <ImageView
+                    android:id="@+id/search_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/search_editTextText"
+                    android:layout_alignStart="@id/search_editTextText"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="-40dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/search_button_drawable" />
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/search_editTextText"
+
+                    android:layout_marginTop="-40dp"
+                    android:layout_alignEnd="@id/search_editTextText"
+                    android:layout_marginEnd="16dp"
+
+
+                    android:src="@drawable/microphone_button_drawable"
+
+                    />
+            </RelativeLayout>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
 
         <HorizontalScrollView
             android:id="@+id/news_buttons_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_below="@id/search_editTextText">
+            android:layout_below="@id/search_container"
+            android:layout_centerVertical="true">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:gravity="center"
                 android:layout_marginTop="24dp"
-               android:paddingVertical="8dp"
-                android:orientation="horizontal">
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingVertical="8dp">
 
                 <Button
                     android:id="@+id/random_news_button"
                     android:layout_width="81dp"
                     android:layout_height="32dp"
-                    android:textColor="@color/white"
                     android:layout_gravity="center"
-                    android:textSize="12sp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_weight="1"
                     android:background="@drawable/roundshapebutton"
                     android:fontFamily="@font/sfsemibold"
 
-                    android:layout_weight="1"
                     android:text="@string/random"
                     android:textAllCaps="false"
-                    android:layout_marginEnd="16dp"/>
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
 
                 <Button
                     android:id="@+id/sports_news_button"
                     android:layout_width="81dp"
                     android:layout_height="32dp"
                     android:layout_gravity="center"
-                    android:textColor="@color/gray_primary"
-                    android:fontFamily="@font/sfsemibold"
-                    android:textSize="12sp"
-                    android:background="@drawable/rounded_corner_view"
+                    android:layout_marginEnd="16dp"
                     android:layout_weight="1"
+                    android:background="@drawable/rounded_corner_view"
+                    android:fontFamily="@font/sfsemibold"
                     android:text="@string/sports_news_button"
                     android:textAllCaps="false"
-                    android:layout_marginEnd="16dp"
+                    android:textColor="@color/gray_primary"
+                    android:textSize="12sp"
 
                     />
 
@@ -107,25 +154,102 @@
                     android:layout_width="81dp"
                     android:layout_height="32dp"
                     android:layout_gravity="center"
-                    android:textColor="@color/gray_primary"
-                    android:textSize="12sp"
-                    android:fontFamily="@font/sfsemibold"
-                    android:background="@drawable/rounded_corner_view"
+                    android:layout_marginEnd="16dp"
                     android:layout_weight="1"
+                    android:background="@drawable/rounded_corner_view"
+                    android:fontFamily="@font/sfsemibold"
                     android:text="@string/gaming_news"
                     android:textAllCaps="false"
-                    android:layout_marginEnd="16dp"/>
+                    android:textColor="@color/gray_primary"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/life_news_button"
+                    android:layout_width="81dp"
+                    android:layout_height="32dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_corner_view"
+                    android:text="@string/life_news"
+                    android:textAllCaps="false"
+                    android:textColor="@color/gray_primary"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/animals_news_button"
+                    android:layout_width="81dp"
+                    android:layout_height="32dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_corner_view"
+                    android:text="@string/animals_news"
+                    android:textAllCaps="false"
+                    android:textColor="@color/gray_primary"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/nature_news_button"
+                    android:layout_width="81dp"
+                    android:layout_height="32dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_corner_view"
+                    android:text="@string/nature_news"
+                    android:textAllCaps="false"
+                    android:textColor="@color/gray_primary"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/food_news_button"
+                    android:layout_width="81dp"
+                    android:layout_height="32dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_corner_view"
+                    android:text="@string/food_news"
+                    android:textAllCaps="false"
+                    android:textColor="@color/gray_primary"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/art_news_button"
+                    android:layout_width="81dp"
+                    android:layout_height="32dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_corner_view"
+                    android:text="@string/art_news"
+                    android:textAllCaps="false"
+                    android:textColor="@color/gray_primary"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/history_news_button"
+                    android:layout_width="81dp"
+                    android:layout_height="32dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_corner_view"
+                    android:text="@string/history_news"
+                    android:textAllCaps="false"
+                    android:textColor="@color/gray_primary"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/fashion_news_button"
+                    android:layout_width="81dp"
+                    android:layout_height="32dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_corner_view"
+                    android:text="@string/fashion_news"
+                    android:textAllCaps="false"
+                    android:textColor="@color/gray_primary"
+                    android:textSize="12sp" />
 
                 <Button
                     android:id="@+id/politics_news_button"
                     android:layout_width="81dp"
                     android:layout_height="32dp"
-                    android:textColor="@color/gray_primary"
-                    android:textSize="12sp"
-                    android:background="@drawable/rounded_corner_view"
                     android:layout_weight="1"
+                    android:background="@drawable/rounded_corner_view"
                     android:text="@string/politics_news"
-                    android:textAllCaps="false" />
+                    android:textAllCaps="false"
+                    android:textColor="@color/gray_primary"
+                    android:textSize="12sp" />
             </LinearLayout>
         </HorizontalScrollView>
 
@@ -136,13 +260,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/news_buttons_container"
             android:layout_marginTop="24dp"
-            android:layout_marginBottom="24dp"
 
-           />
-
-
-
+            />
 
 
     </RelativeLayout>
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

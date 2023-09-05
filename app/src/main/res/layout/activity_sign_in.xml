@@ -9,10 +9,10 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginTop="72dp"
+
         android:layout_marginBottom="8dp"
         >
 
@@ -20,9 +20,10 @@
             android:id="@+id/welcomebackimg"
             android:layout_width="216dp"
             android:layout_height="32dp"
+            android:layout_marginTop="72dp"
 
             android:layout_marginEnd="139dp"
-            android:layout_marginTop="28dp"
+
             android:src="@drawable/welcomeback" />
 
         <TextView
@@ -36,31 +37,48 @@
             android:textSize="16sp"
             android:layout_below="@id/welcomebackimg"/>
 
-        <EditText
-            android:id="@+id/sign_in_editTextTextEmailAddress"
-            android:layout_width="336dp"
-            android:layout_height="56dp"
-            android:layout_marginTop="32dp"
-            android:background="@drawable/rounded_corner_view"
-            android:drawableStart="@drawable/envelope"
-            android:drawablePadding="24dp"
-            android:ems="10"
-            android:hint="@string/email_address_hint"
-            android:textColorHint="@color/gray_primary"
-            android:inputType="textEmailAddress"
-            android:paddingStart="24dp"
-            android:paddingEnd="24dp"
-            android:layout_below="@id/welcomebacktxt"/>
-
-
-        <RelativeLayout
-            android:id="@+id/sign_in_password_container"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sign_in_editText_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_below="@id/sign_in_editTextTextEmailAddress">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_below="@id/welcomebacktxt"
+            android:textColorHint="@color/gray_primary"
+            app:hintAnimationEnabled="false">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sign_in_editTextTextEmailAddress"
+                android:layout_width="336dp"
+                android:layout_height="56dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/rounded_corner_view"
+                android:drawableStart="@drawable/envelope"
+                android:drawablePadding="24dp"
+                android:ems="10"
+                android:hint="@string/email_address_hint"
+                android:textColorHint="@color/gray_primary"
+                android:inputType="textEmailAddress"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:layout_below="@id/welcomebacktxt"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sign_in_password_container"
+            android:layout_width="336dp"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/gray_primary"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/gray_primary"
+            android:layout_below="@id/sign_in_editText_container"
+            app:hintAnimationEnabled="false"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/sign_in_editTextTextPassword"
                 android:layout_width="336dp"
                 android:layout_height="56dp"
@@ -73,20 +91,15 @@
                 android:hint="@string/password_hint"
                 android:inputType="textPassword"
                 android:paddingHorizontal="24dp"
-                android:textColorHint="@color/gray_primary"
 
 
-                />
 
-            <ImageView
-                android:id="@+id/eye_show_password_sign_in"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="34dp"
-                android:layout_marginStart="-50dp"
-                android:layout_toEndOf="@id/sign_in_editTextTextPassword"
-                android:src="@drawable/eye" />
-        </RelativeLayout>
+                android:paddingEnd="24dp"
+                android:textColor="@color/gray_primary"
+                android:textColorHint="@color/gray_primary" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:id="@+id/forgot_password_clickable_txt"
@@ -103,6 +116,8 @@
             android:text="@string/forgot_password"
             android:layout_below="@id/sign_in_password_container"
             android:focusable="true" />
+
+
 
         <Button
             android:id="@+id/signinbutton"
