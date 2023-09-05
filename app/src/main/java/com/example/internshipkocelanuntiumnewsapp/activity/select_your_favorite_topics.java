@@ -16,6 +16,7 @@ public class select_your_favorite_topics extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_your_favorite_topics);
+        getSupportActionBar().hide();
 
         nextBtn = (Button) findViewById(R.id.next_fav_topic_button);
         bt1 = (Button) findViewById(R.id.sports_topic_button);

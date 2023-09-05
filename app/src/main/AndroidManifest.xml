@@ -46,11 +46,11 @@
             android:theme="@style/Theme.AppCompat" />
         <activity
             android:name=".activity.SignIn"
-            android:exported="true"
+            android:exported="false"
             android:theme="@style/Theme.AppCompat" />
         <activity
             android:name=".activity.WelcomeScreen"
-            android:exported="true"
+            android:exported="false"
             android:theme="@style/Theme.AppCompat" />
         <activity
             android:name=".activity.Onboarding"

@@ -26,6 +26,8 @@ public class SignIn extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
+        getSupportActionBar().hide(); //Hiding action bar
+
         email = findViewById(R.id.sign_in_editTextTextEmailAddress);
         password = findViewById(R.id.sign_in_editTextTextPassword);
         eye = findViewById(R.id.eye_show_password_sign_in);

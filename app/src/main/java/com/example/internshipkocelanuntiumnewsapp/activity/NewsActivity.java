@@ -3,10 +3,16 @@ package com.example.internshipkocelanuntiumnewsapp.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.internshipkocelanuntiumnewsapp.Models.News;
 import com.example.internshipkocelanuntiumnewsapp.adapter.NewsAdapter;
@@ -23,6 +29,7 @@ import java.util.List;
 public class NewsActivity extends AppCompatActivity {
 
     ListView newsListView;
+    EditText search;
 
     NewsAdapter newsAdapter;
     Button newsBtn;
@@ -31,13 +38,11 @@ public class NewsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
-
-        //Instantiate the news adapter
-
-
+        getSupportActionBar().hide();
 
         //Get the ListView and attach the adapter
         newsListView = findViewById(R.id.news_list_view);
+        search = findViewById(R.id.search_editTextText);
 
         newsListView.setAdapter(newsAdapter);
 
@@ -48,10 +53,11 @@ public class NewsActivity extends AppCompatActivity {
         // Getting news from News Api
         NewsApiClient newsApiClient = new NewsApiClient("7c999e7db25f4894b27af4a416401509");
 
+        //News Api integration
         // /v2/everything
         newsApiClient.getEverything(
                 new EverythingRequest.Builder()
-                        .q("trump")
+                        .q("artificial intelligence")
                         .build(),
                 new NewsApiClient.ArticlesResponseCallback() {
 
@@ -80,6 +86,12 @@ public class NewsActivity extends AppCompatActivity {
                     }
                 }
         );
+
+
+
+
+
+
 
 
     }

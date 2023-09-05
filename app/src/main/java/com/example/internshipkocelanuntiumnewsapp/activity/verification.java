@@ -16,6 +16,7 @@ public class verification extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verification);
+        getSupportActionBar().hide();
 
         vrfBtn = (Button) findViewById(R.id.verificationsigninbutton);
         vrfBtnOnClickListener();

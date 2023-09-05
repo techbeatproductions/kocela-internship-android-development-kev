@@ -16,6 +16,7 @@ public class create_new_password extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_new_password);
+        getSupportActionBar().hide();
 
         createPswdBtn = (Button) findViewById(R.id.create_new_password_button);
         OnClickListeners();

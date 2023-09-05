@@ -15,6 +15,7 @@ public class Onboarding extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_onboarding);
+        getSupportActionBar().hide();
 
         Button nextOnBoardBtn = (Button) findViewById(R.id.next_onboarding_button);
         nextOnBoardBtn.setOnClickListener(new View.OnClickListener() {
