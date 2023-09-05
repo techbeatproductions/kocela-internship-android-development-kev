@@ -33,7 +33,7 @@
             <TextView
                 android:id="@+id/news_title_holder"
                 android:layout_width="224dp"
-                android:layout_height="48dp"
+                android:layout_height="58dp"
                 android:layout_marginTop="16sp"
                 android:layout_marginStart="16sp"
                 android:layout_marginBottom="16sp"
@@ -41,7 +41,9 @@
                 android:textColor="@color/black_primary"
                 android:fontFamily="@font/sfsemibold"
                 android:text="@string/a_simple_trick_for_creating_color_palettes_quickly"
-                android:layout_below="@id/news_image_holder"/>
+                android:layout_below="@id/news_image_holder"
+                android:maxLines="3"
+                android:minLines="1"/>
 
             <ImageView
                 android:id="@+id/imageView4"

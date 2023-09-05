@@ -15,7 +15,7 @@
         android:layout_gravity="center"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginTop="72dp">
+        android:layout_marginTop="52dp">
 
         <TextView
             android:id="@+id/homePageTitle"
@@ -53,7 +53,8 @@
             android:paddingEnd="16dp"
             android:layout_below="@id/discover_some_things_text_view"
             android:background="@drawable/rounded_corner_view"
-            android:layout_marginTop="32dp"/>
+            android:layout_marginTop="32dp"
+            android:textColor="@color/gray_primary"/>
 
         <HorizontalScrollView
             android:id="@+id/news_buttons_container"
