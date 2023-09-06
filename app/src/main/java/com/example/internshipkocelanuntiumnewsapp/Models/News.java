@@ -28,6 +28,8 @@ public class News {
 
 
 
+
+
     public String getTitle() {
         return title;
     }

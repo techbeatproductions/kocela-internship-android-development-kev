@@ -21,7 +21,7 @@
             android:id="@+id/select_your_favorite_topics_text_view"
             android:layout_width="336dp"
             android:layout_height="32dp"
-            android:layout_marginTop="72dp"
+            android:layout_marginTop="22dp"
             android:text="@string/select_your_favorite_topics"
             android:fontFamily="@font/sfsemibold"
             android:textSize="24sp"
@@ -48,7 +48,7 @@
             android:layout_height="74dp"
             android:orientation="horizontal"
 
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="10dp"
             android:layout_below="@id/select_some_of_your_text_view"
 
             >
@@ -244,6 +244,7 @@
             android:layout_width="336dp"
             android:layout_height="56dp"
             android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
             android:text="@string/next"
             android:textColor="@color/white"
             android:layout_below="@id/fifth_topic_group_container"

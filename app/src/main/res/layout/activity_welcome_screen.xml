@@ -21,7 +21,7 @@
                 android:id="@+id/hands3D"
                 android:layout_width="496dp"
                 android:layout_height="272dp"
-                android:layout_marginTop="202dp"
+                android:layout_marginTop="150dp"
                 android:layout_marginStart="-79dp"
                 android:layout_marginEnd="-79dp"
                 android:layout_marginBottom="-79dp"

@@ -11,6 +11,7 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -36,16 +37,22 @@ public class NewsActivity extends AppCompatActivity  {
     EditText search;
     NewsAdapter newsAdapter;
     ImageView search_button_img;
+    private Button[] buttons;
     private Button randomNewsButton;
+
+    ArrayList<Integer> selectedButtonIds;
 
 
     ArrayList<News> newsList = new ArrayList<>();
-    private  String defaultSearchTerm = "technology";
+    String defaultSearchTerm = "technology";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
         getSupportActionBar().hide();
+
+        selectedButtonIds = getIntent().getIntegerArrayListExtra("selectedButtonIds");
 
         //Get the ListView and attach the adapter
         newsListView = findViewById(R.id.news_list_view);
@@ -54,15 +61,34 @@ public class NewsActivity extends AppCompatActivity  {
 
         randomNewsButton = (Button) findViewById(R.id.random_news_button);
 
+        buttons =  new Button[] {
+                findViewById(R.id.sports_topic_button),
+                findViewById(R.id.politics_topic_button),
+                findViewById(R.id.life_topic_button),
+                findViewById(R.id.gaming_topic_button),
+                findViewById(R.id.animals_topic_button),
+                findViewById(R.id.nature_topic_button),
+                findViewById(R.id.food_topic_button),
+                findViewById(R.id.art_topic_button),
+                findViewById(R.id.history_topic_button),
+                findViewById(R.id.fashion_topic_button)
+        };
+
+
 
 
 
         onClickListeners();
 
         //Display technology news by default
+
         fetchNewsArticles(defaultSearchTerm);
 
     }
+
+
+
+
 
 
     private void fetchNewsArticles(String searchTerm){
@@ -87,8 +113,13 @@ public class NewsActivity extends AppCompatActivity  {
                             String author = article.getAuthor();
                             String title = article.getTitle();
                             String imageUrl = article.getUrlToImage();
-                            News news = new News(author,title,"","",imageUrl,"","");
-                            newsList.add(news);
+                            String content = article.getContent();
+                            String url = article.getUrl();
+
+                            if (!title.equals("[Removed]") && !title.isEmpty()) {
+                                News news = new News(author, title, "", url, imageUrl, "", content);
+                                newsList.add(news);
+                            }
                         }
 
                         newsAdapter =  new NewsAdapter(NewsActivity.this, newsList);
@@ -121,11 +152,45 @@ public class NewsActivity extends AppCompatActivity  {
         randomNewsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(NewsActivity.this, articles.class));
+                fetchNewsArticles(defaultSearchTerm);
 
 
             }
         });
+
+        newsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(NewsActivity.this, articles.class);
+                intent.putExtra("title", newsList.get(i).getTitle() );
+                intent.putExtra("content", newsList.get(i).getContent());
+                intent.putExtra("author", newsList.get(i).getAuthor());
+                intent.putExtra("image",newsList.get(i).getUrlToImage());
+                intent.putExtra("url", newsList.get(i).getUrl());
+
+                startActivity(intent);
+            }
+        });
+
+        // OnClickListener for each topic button
+        for(int i=0; i < buttons.length; i++) {
+            final int buttonIndex = i;
+
+            buttons[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    buttons[buttonIndex].setBackgroundResource(R.drawable.roundshapebutton);
+                    buttons[buttonIndex].setTextColor(getColor(R.color.white));
+
+                    //Get the text of the selected button
+                    String selectedTopic = buttons[buttonIndex].getText().toString();
+
+                    //Fetch news articles based on the selected topic
+                    fetchNewsArticles(selectedTopic);
+                }
+            });
+
+        }
     }
 
 

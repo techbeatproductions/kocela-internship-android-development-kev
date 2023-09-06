@@ -62,7 +62,7 @@ public class SignIn extends AppCompatActivity {
     public void OnClickListeners(View view){
         if(view.getId() == R.id.signinbutton){
             emailValidators();
-           startActivity(new Intent(SignIn.this, select_your_favorite_topics.class));
+            startActivity(new Intent(SignIn.this, select_your_favorite_topics.class));
 
         } else if (view.getId() == R.id.signinwithgooglebutton) {
             startActivity(new Intent(SignIn.this, select_your_favorite_topics.class));
@@ -115,7 +115,7 @@ public class SignIn extends AppCompatActivity {
 
                     if(Patterns.EMAIL_ADDRESS.matcher(charSequence).matches()){
                         //Email is valid
-                        
+
                         signIn.setEnabled(true);
                     }else {
                         //Email is invalid

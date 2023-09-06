@@ -8,6 +8,7 @@
     android:background="@color/white">
 
     <RelativeLayout
+        android:id="@+id/sign_in_full_screen_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="20dp"
@@ -48,7 +49,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/sign_in_editTextTextEmailAddress"
-                android:layout_width="336dp"
+                android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:layout_marginTop="32dp"
                 android:background="@drawable/rounded_corner_view"
@@ -68,7 +69,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/sign_in_password_container"
-            android:layout_width="336dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/gray_primary"
             app:passwordToggleEnabled="true"
@@ -80,7 +81,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/sign_in_editTextTextPassword"
-                android:layout_width="336dp"
+                android:layout_width= "match_parent"
                 android:layout_height="56dp"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/rounded_corner_view"
@@ -183,12 +184,13 @@
 
         <LinearLayout
             android:id="@+id/sign_in_sign_up_redirect"
-            android:layout_width="245dp"
+            android:layout_width="wrap_content"
             android:layout_height="32dp"
             android:orientation="horizontal"
             android:layout_marginStart="65dp"
             android:layout_marginTop="50dp"
-            android:layout_marginEnd="65dp"
+
+
             android:textAlignment="center"
             android:layout_below="@id/signinwithfacebookbutton"
             android:onClick="OnClickListeners">

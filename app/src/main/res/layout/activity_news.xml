@@ -111,6 +111,7 @@
             android:layout_centerVertical="true">
 
             <LinearLayout
+                android:id="@+id/categories_linear_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginTop="24dp"
@@ -128,13 +129,14 @@
                     android:background="@drawable/roundshapebutton"
                     android:fontFamily="@font/sfsemibold"
 
+
                     android:text="@string/random"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
                     android:textSize="12sp" />
 
                 <Button
-                    android:id="@+id/sports_news_button"
+                    android:id="@+id/sports_topic_button"
                     android:layout_width="81dp"
                     android:layout_height="32dp"
                     android:layout_gravity="center"
@@ -150,7 +152,7 @@
                     />
 
                 <Button
-                    android:id="@+id/gaming_news_button"
+                    android:id="@+id/gaming_topic_button"
                     android:layout_width="81dp"
                     android:layout_height="32dp"
                     android:layout_gravity="center"
@@ -164,9 +166,11 @@
                     android:textSize="12sp" />
 
                 <Button
-                    android:id="@+id/life_news_button"
+                    android:id="@+id/life_topic_button"
                     android:layout_width="81dp"
                     android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="16dp"
                     android:layout_weight="1"
                     android:background="@drawable/rounded_corner_view"
                     android:text="@string/life_news"
@@ -175,9 +179,11 @@
                     android:textSize="12sp" />
 
                 <Button
-                    android:id="@+id/animals_news_button"
+                    android:id="@+id/animals_topic_button"
                     android:layout_width="81dp"
                     android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="16dp"
                     android:layout_weight="1"
                     android:background="@drawable/rounded_corner_view"
                     android:text="@string/animals_news"
@@ -186,9 +192,11 @@
                     android:textSize="12sp" />
 
                 <Button
-                    android:id="@+id/nature_news_button"
+                    android:id="@+id/nature_topic_button"
                     android:layout_width="81dp"
                     android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="16dp"
                     android:layout_weight="1"
                     android:background="@drawable/rounded_corner_view"
                     android:text="@string/nature_news"
@@ -197,9 +205,11 @@
                     android:textSize="12sp" />
 
                 <Button
-                    android:id="@+id/food_news_button"
+                    android:id="@+id/food_topic_button"
                     android:layout_width="81dp"
                     android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="16dp"
                     android:layout_weight="1"
                     android:background="@drawable/rounded_corner_view"
                     android:text="@string/food_news"
@@ -208,9 +218,11 @@
                     android:textSize="12sp" />
 
                 <Button
-                    android:id="@+id/art_news_button"
+                    android:id="@+id/art_topic_button"
                     android:layout_width="81dp"
                     android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="16dp"
                     android:layout_weight="1"
                     android:background="@drawable/rounded_corner_view"
                     android:text="@string/art_news"
@@ -219,9 +231,11 @@
                     android:textSize="12sp" />
 
                 <Button
-                    android:id="@+id/history_news_button"
+                    android:id="@+id/history_topic_button"
                     android:layout_width="81dp"
                     android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="16dp"
                     android:layout_weight="1"
                     android:background="@drawable/rounded_corner_view"
                     android:text="@string/history_news"
@@ -230,9 +244,11 @@
                     android:textSize="12sp" />
 
                 <Button
-                    android:id="@+id/fashion_news_button"
+                    android:id="@+id/fashion_topic_button"
                     android:layout_width="81dp"
                     android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="16dp"
                     android:layout_weight="1"
                     android:background="@drawable/rounded_corner_view"
                     android:text="@string/fashion_news"
@@ -241,9 +257,11 @@
                     android:textSize="12sp" />
 
                 <Button
-                    android:id="@+id/politics_news_button"
+                    android:id="@+id/politics_topic_button"
                     android:layout_width="81dp"
                     android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="16dp"
                     android:layout_weight="1"
                     android:background="@drawable/rounded_corner_view"
                     android:text="@string/politics_news"

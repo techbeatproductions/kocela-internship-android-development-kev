@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     tools:context=".activity.articles"
     android:background="@android:color/transparent">
 
@@ -24,6 +24,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+
                 >
 
                 <ImageView
@@ -31,7 +32,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/news_card_container_drawable"
-                    android:scaleType="fitXY"
+                    android:scaleType="centerCrop"
                     android:src="@drawable/article_image"
                     />
 
@@ -43,8 +44,7 @@
                     android:layout_below="@id/article_img_actual"
                     android:layout_marginTop="-310dp"
                     android:layout_marginStart="20dp"
-                    android:clickable="true"
-                    android:focusable="true" />
+                    />
 
                 <ImageView
                     android:id="@+id/bookmark_button_with_icon"
@@ -71,6 +71,7 @@
                     android:layout_alignParentEnd="true"
                     />
 
+                <!--
                 <Button
                     android:id="@+id/news_article_button"
                     android:layout_width="100dp"
@@ -84,18 +85,24 @@
                     android:layout_below="@id/back_button_with_icon"
                     android:layout_marginTop="70dp"
                     android:layout_marginStart="20dp"/>
+                    -->
+
 
                 <TextView
                     android:id="@+id/news_headline_txt_view"
-                    android:layout_width="336dp"
-                    android:layout_height="56dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:textColor="@color/white"
                     android:fontFamily="@font/sfbold"
                     android:textSize="20sp"
                     android:text="@string/the_latest_situation_in_the_presidential_election"
-                    android:layout_below="@id/news_article_button"
+                    android:layout_below="@id/back_button_with_icon"
                     android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"/>
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="70dp"
+                    android:minLines="1"
+                    android:maxLines="3"
+                    android:shadowColor="@color/gray_primary"/>
 
                 <ImageView
                     android:id="@+id/author_img_view"
