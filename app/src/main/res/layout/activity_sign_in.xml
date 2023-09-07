@@ -45,6 +45,17 @@
             android:layout_marginTop="32dp"
             android:layout_below="@id/welcomebacktxt"
             android:textColorHint="@color/gray_primary"
+            app:errorTextAppearance="@style/HintTextAppearance"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            app:boxStrokeErrorColor="@color/purple_primary"
+
+
+
+
+            android:layout_marginBottom="16dp"
+
+            app:hintTextAppearance="@style/HintTextAppearance"
             app:hintAnimationEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -57,7 +68,9 @@
                 android:drawablePadding="24dp"
                 android:ems="10"
                 android:hint="@string/email_address_hint"
-                android:textColorHint="@color/gray_primary"
+                android:textColor="@color/gray_primary"
+
+
                 android:inputType="textEmailAddress"
                 android:paddingStart="24dp"
                 android:paddingEnd="24dp"
@@ -73,9 +86,12 @@
             android:layout_height="wrap_content"
             android:textColorHint="@color/gray_primary"
             app:passwordToggleEnabled="true"
+            app:hintTextAppearance="@style/HintTextAppearance"
+            app:errorTextAppearance="@style/HintTextAppearance"
             app:passwordToggleTint="@color/gray_primary"
             android:layout_below="@id/sign_in_editText_container"
             app:hintAnimationEnabled="false"
+
 
             >
 

@@ -7,6 +7,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -40,7 +41,7 @@ public class NewsActivity extends AppCompatActivity  {
     private Button[] buttons;
     private Button randomNewsButton;
 
-    ArrayList<Integer> selectedButtonIds;
+    ArrayList<Integer> selectedButtonIds = new ArrayList<>();
 
 
     ArrayList<News> newsList = new ArrayList<>();
@@ -49,10 +50,21 @@ public class NewsActivity extends AppCompatActivity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d("NewsActivity", "onCreate called");
         setContentView(R.layout.activity_news);
         getSupportActionBar().hide();
 
         selectedButtonIds = getIntent().getIntegerArrayListExtra("selectedButtonIds");
+
+
+        // Add a debug log to print the received selectedButtonIds
+        if (selectedButtonIds != null) {
+            for (int buttonId : selectedButtonIds) {
+                Log.d("NewsActivity", "Received selectedButtonId: " + buttonId);
+            }
+        } else {
+            Log.d("NewsActivity", "selectedButtonIds is null");
+        }
 
         //Get the ListView and attach the adapter
         newsListView = findViewById(R.id.news_list_view);
@@ -74,6 +86,8 @@ public class NewsActivity extends AppCompatActivity  {
                 findViewById(R.id.fashion_topic_button)
         };
 
+       loadButtonStates();
+
 
 
 
@@ -85,6 +99,25 @@ public class NewsActivity extends AppCompatActivity  {
         fetchNewsArticles(defaultSearchTerm);
 
     }
+
+    private void loadButtonStates() {
+        for (Button button : buttons) {
+            int buttonId = button.getId();
+            boolean isSelected = selectedButtonIds.contains(buttonId);
+            button.setSelected(isSelected);
+
+            Log.d("ButtonVisibility", button.getText().toString() + " is selected: " + isSelected);
+
+            if (isSelected) {
+                button.setVisibility(View.VISIBLE);
+                fetchNewsArticles(button.getText().toString());
+            } else {
+                button.setVisibility(View.GONE);
+            }
+        }
+    }
+
+
 
 
 
@@ -138,6 +171,22 @@ public class NewsActivity extends AppCompatActivity  {
 
     }
 
+    public void toggleButtonSelection(Button button){
+        int buttonId = button.getId();
+        if (selectedButtonIds.contains(buttonId)) {
+            // Button is selected, so deselect it
+            selectedButtonIds.remove(Integer.valueOf(buttonId));
+            button.setSelected(false);
+
+        } else {
+            // Button is not selected, so select it
+            selectedButtonIds.add(buttonId);
+            button.setSelected(true);
+            // Fetch news articles based on the selected topic
+            fetchNewsArticles(button.getText().toString());
+        }
+    }
+
     private void onClickListeners(){
         //Set an OnClickListener for search button
         search_button_img.setOnClickListener(new View.OnClickListener() {
@@ -173,22 +222,27 @@ public class NewsActivity extends AppCompatActivity  {
         });
 
         // OnClickListener for each topic button
-        for(int i=0; i < buttons.length; i++) {
-            final int buttonIndex = i;
+        for(Button button : buttons) {
+            if (button.getVisibility() == View.VISIBLE)
+            {
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        //Get the text of the selected button
+                        String selectedTopic = button.getText().toString();
 
-            buttons[i].setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    buttons[buttonIndex].setBackgroundResource(R.drawable.roundshapebutton);
-                    buttons[buttonIndex].setTextColor(getColor(R.color.white));
+                        //Fetch news articles based on the selected topic
+                        fetchNewsArticles(selectedTopic);
 
-                    //Get the text of the selected button
-                    String selectedTopic = buttons[buttonIndex].getText().toString();
+                        //Update the selectedButtonIds and button state
+                        toggleButtonSelection(button);
+                    }
+                });
 
-                    //Fetch news articles based on the selected topic
-                    fetchNewsArticles(selectedTopic);
-                }
-            });
+            }
+
+
+
 
         }
     }

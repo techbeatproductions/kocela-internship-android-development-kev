@@ -9,11 +9,11 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginTop="72dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginBottom="20dp"
        >
 
         <TextView
@@ -30,7 +30,7 @@
 
         <TextView
             android:id="@+id/hello_sign_up_text_view"
-            android:layout_width="336dp"
+            android:layout_width="match_parent"
             android:layout_height="68dp"
             android:text="@string/hello_i_guess_you_are_new_around_here_you_can_start_using_the_application_after_sign_up"
             android:layout_marginTop="8dp"
@@ -40,12 +40,14 @@
             android:layout_below="@id/welcome_to_nuntium_text_view"
             />
 
+        <!--User name -->
         <EditText
             android:id="@+id/sign_up_user_name_editTextText"
-            android:layout_width="336dp"
+            android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginTop="32dp"
-            android:layout_marginEnd="19dp"
+            android:textColor="@color/gray_primary"
+
             android:ems="10"
             android:inputType="text"
             android:background="@drawable/rounded_corner_view"
@@ -58,61 +60,138 @@
             android:layout_below="@id/hello_sign_up_text_view"
             />
 
-        <EditText
-            android:id="@+id/sign_up_editTextTextEmailAddress"
-            android:layout_width="336dp"
-            android:layout_height="56dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/rounded_corner_view"
-            android:drawableStart="@drawable/envelope"
-            android:drawablePadding="24dp"
-            android:ems="10"
-            android:hint="@string/email_address_hint"
-            android:textColorHint="@color/gray_primary"
-            android:inputType="textEmailAddress"
-            android:paddingStart="24dp"
-            android:layout_below="@id/sign_up_user_name_editTextText"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sign_up_email_editText_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
 
-        <EditText
-            android:id="@+id/sign_up_newTextPassword"
-            android:layout_width="336dp"
-            android:layout_height="56dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/rounded_corner_view"
-            android:drawableStart="@drawable/padlock"
-            android:drawablePadding="24dp"
-            android:ems="10"
-            android:hint="@string/new_password_hint"
+            android:layout_below="@id/sign_up_user_name_editTextText"
             android:textColorHint="@color/gray_primary"
-            android:inputType="textPassword"
-            android:paddingStart="24dp"
-            android:layout_below="@id/sign_up_editTextTextEmailAddress"/>
+            app:errorTextAppearance="@style/HintTextAppearance"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            app:boxStrokeErrorColor="@color/purple_primary"
 
-        <EditText
-            android:id="@+id/sign_up_repeatnewTextPassword"
-            android:layout_width="336dp"
-            android:layout_height="56dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/rounded_corner_view"
-            android:drawableStart="@drawable/padlock"
-            android:drawablePadding="24dp"
-            android:ems="10"
-            android:hint="@string/repeat_new_password_hint"
+
+
+
+            android:layout_marginBottom="16dp"
+
+            app:hintTextAppearance="@style/HintTextAppearance"
+            app:hintAnimationEnabled="false">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sign_up_editTextTextEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/rounded_corner_view"
+                android:drawableStart="@drawable/envelope"
+                android:drawablePadding="24dp"
+                android:ems="10"
+                android:hint="@string/email_address_hint"
+                android:textColor="@color/gray_primary"
+
+
+                android:inputType="textEmailAddress"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:layout_below="@id/welcomebacktxt"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sign_up_new_password_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:textColorHint="@color/gray_primary"
-            android:inputType="textPassword"
-            android:paddingStart="24dp"
-            android:layout_below="@id/sign_up_newTextPassword"/>
+            app:passwordToggleEnabled="true"
+            android:layout_marginTop="32dp"
+            app:hintTextAppearance="@style/HintTextAppearance"
+            app:errorTextAppearance="@style/HintTextAppearance"
+            app:passwordToggleTint="@color/gray_primary"
+            android:layout_below="@id/sign_up_email_editText_container"
+            app:hintAnimationEnabled="false"
+
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sign_up_newTextPassword"
+                android:layout_width= "match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_corner_view"
+                android:drawableStart="@drawable/padlock"
+
+                android:drawablePadding="24dp"
+                android:ems="10"
+                android:hint="New Password"
+                android:inputType="textPassword"
+                android:paddingHorizontal="24dp"
+
+
+
+                android:paddingEnd="24dp"
+                android:textColor="@color/gray_primary"
+                android:textColorHint="@color/gray_primary" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sign_up_repeat_password_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:textColorHint="@color/gray_primary"
+            app:passwordToggleEnabled="true"
+            app:hintTextAppearance="@style/HintTextAppearance"
+            app:errorTextAppearance="@style/HintTextAppearance"
+            app:passwordToggleTint="@color/gray_primary"
+            android:layout_below="@id/sign_up_new_password_container"
+            app:hintAnimationEnabled="false"
+
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sign_up_repeatnewTextPassword"
+                android:layout_width= "match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_corner_view"
+                android:drawableStart="@drawable/padlock"
+
+                android:drawablePadding="24dp"
+                android:ems="10"
+                android:hint="Repeat Password"
+                android:inputType="textPassword"
+                android:paddingHorizontal="24dp"
+
+
+
+                android:paddingEnd="24dp"
+                android:textColor="@color/gray_primary"
+                android:textColorHint="@color/gray_primary" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
 
         <Button
             android:id="@+id/sign_up_button"
             android:layout_width="336dp"
             android:layout_height="56dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="32dp"
             android:background="@drawable/roundshapebutton"
             android:text="@string/sign_up"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:layout_below="@id/sign_up_repeatnewTextPassword"/>
+            android:layout_below="@id/sign_up_repeat_password_container"/>
 
 
         <LinearLayout
@@ -121,8 +200,10 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginStart="49dp"
-            android:layout_marginTop="202dp"
+            android:layout_marginTop="140dp"
             android:layout_below="@id/sign_up_button"
+
+            android:layout_marginBottom="170dp"
             android:clickable="true"
             >
 

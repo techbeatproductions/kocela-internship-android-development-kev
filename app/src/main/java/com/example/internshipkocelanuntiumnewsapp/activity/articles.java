@@ -54,7 +54,7 @@ public class articles extends AppCompatActivity {
         back_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(articles.this, NewsActivity.class));
+                finish();
             }
         });
 
