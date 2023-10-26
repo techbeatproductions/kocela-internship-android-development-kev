@@ -108,37 +108,36 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/search_container"
+
             android:layout_centerVertical="true">
 
             <LinearLayout
                 android:id="@+id/categories_linear_layout"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="50dp"
                 android:layout_marginTop="24dp"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:paddingVertical="8dp">
+              >
 
                 <Button
                     android:id="@+id/random_news_button"
-                    android:layout_width="81dp"
-                    android:layout_height="32dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
                     android:layout_gravity="center"
                     android:layout_marginEnd="16dp"
                     android:layout_weight="1"
                     android:background="@drawable/roundshapebutton"
                     android:fontFamily="@font/sfsemibold"
-
-
-                    android:text="@string/random"
+                    android:text="Choose News"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
                     android:textSize="12sp" />
 
                 <Button
                     android:id="@+id/sports_topic_button"
-                    android:layout_width="81dp"
-                    android:layout_height="32dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
                     android:layout_gravity="center"
                     android:layout_marginEnd="16dp"
                     android:layout_weight="1"
@@ -154,7 +153,7 @@
                 <Button
                     android:id="@+id/gaming_topic_button"
                     android:layout_width="81dp"
-                    android:layout_height="32dp"
+                    android:layout_height="28dp"
                     android:layout_gravity="center"
                     android:layout_marginEnd="16dp"
                     android:layout_weight="1"
@@ -168,7 +167,7 @@
                 <Button
                     android:id="@+id/life_topic_button"
                     android:layout_width="81dp"
-                    android:layout_height="32dp"
+                    android:layout_height="28dp"
                     android:layout_gravity="center"
                     android:layout_marginEnd="16dp"
                     android:layout_weight="1"
@@ -181,7 +180,7 @@
                 <Button
                     android:id="@+id/animals_topic_button"
                     android:layout_width="81dp"
-                    android:layout_height="32dp"
+                    android:layout_height="28dp"
                     android:layout_gravity="center"
                     android:layout_marginEnd="16dp"
                     android:layout_weight="1"
@@ -194,7 +193,7 @@
                 <Button
                     android:id="@+id/nature_topic_button"
                     android:layout_width="81dp"
-                    android:layout_height="32dp"
+                    android:layout_height="28dp"
                     android:layout_gravity="center"
                     android:layout_marginEnd="16dp"
                     android:layout_weight="1"
@@ -207,7 +206,7 @@
                 <Button
                     android:id="@+id/food_topic_button"
                     android:layout_width="81dp"
-                    android:layout_height="32dp"
+                    android:layout_height="28dp"
                     android:layout_gravity="center"
                     android:layout_marginEnd="16dp"
                     android:layout_weight="1"
@@ -220,7 +219,7 @@
                 <Button
                     android:id="@+id/art_topic_button"
                     android:layout_width="81dp"
-                    android:layout_height="32dp"
+                    android:layout_height="28dp"
                     android:layout_gravity="center"
                     android:layout_marginEnd="16dp"
                     android:layout_weight="1"
@@ -233,7 +232,7 @@
                 <Button
                     android:id="@+id/history_topic_button"
                     android:layout_width="81dp"
-                    android:layout_height="32dp"
+                    android:layout_height="28dp"
                     android:layout_gravity="center"
                     android:layout_marginEnd="16dp"
                     android:layout_weight="1"
@@ -246,7 +245,7 @@
                 <Button
                     android:id="@+id/fashion_topic_button"
                     android:layout_width="81dp"
-                    android:layout_height="32dp"
+                    android:layout_height="28dp"
                     android:layout_gravity="center"
                     android:layout_marginEnd="16dp"
                     android:layout_weight="1"
@@ -259,7 +258,7 @@
                 <Button
                     android:id="@+id/politics_topic_button"
                     android:layout_width="81dp"
-                    android:layout_height="32dp"
+                    android:layout_height="28dp"
                     android:layout_gravity="center"
                     android:layout_marginEnd="16dp"
                     android:layout_weight="1"

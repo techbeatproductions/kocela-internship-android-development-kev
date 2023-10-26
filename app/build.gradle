@@ -74,5 +74,8 @@ dependencies {
     debugImplementation 'androidx.compose.ui:ui-test-manifest'
     implementation 'com.squareup.picasso:picasso:2.8'
     implementation 'com.github.KwabenBerko:News-API-Java:1.0.2'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.1'
+
+
 
 }

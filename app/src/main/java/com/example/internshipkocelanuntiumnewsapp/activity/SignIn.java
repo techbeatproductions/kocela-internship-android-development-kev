@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.example.internshipkocelanuntiumnewsapp.R;
+import com.example.internshipkocelanuntiumnewsapp.utils.UserLoginTask;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -67,19 +68,27 @@ public class SignIn extends AppCompatActivity {
 
             if (isValidEmail(userEmail) && !TextUtils.isEmpty(userPassword)) {
                 Log.d(TAG, "Sign-in successful");
-                startActivity(new Intent(SignIn.this, select_your_favorite_topics.class));
+                // Log the login data
+                Log.d(TAG, "User Email: " + userEmail);
+                Log.d(TAG, "User Password: " + userPassword);
+
+                new UserLoginTask(SignIn.this).execute(userEmail, userPassword);
+
+
+
             } else {
                 // Handle invalid email or password
                 Log.d(TAG, "Sign-in failed");
-                errorTvText.setVisibility(View.VISIBLE);
-                errorTvText.setText("Invalid email or password");
+
+
+                ;
             }
         } else if (view.getId() == R.id.signinwithgooglebutton) {
             Log.d(TAG, "Sign in with Google button clicked");
-            startActivity(new Intent(SignIn.this, select_your_favorite_topics.class));
+            startActivity(new Intent(SignIn.this, NewsActivity.class));
         } else if (view.getId() == R.id.signinwithfacebookbutton) {
             Log.d(TAG, "Sign in with Facebook button clicked");
-            startActivity(new Intent(SignIn.this, select_your_favorite_topics.class));
+            startActivity(new Intent(SignIn.this, NewsActivity.class));
         } else if (view.getId() == R.id.forgot_password_clickable_txt) {
             Log.d(TAG, "Forgot password clicked");
             startActivity(new Intent(SignIn.this, Forgot_Password.class));
@@ -101,6 +110,11 @@ public class SignIn extends AppCompatActivity {
                 // Check if email is empty or invalid
                 String emailText = charSequence.toString().trim();
                 boolean isValidEmail = isValidEmail(emailText);
+                googleSignIn.setVisibility(View.GONE);
+                faceBookSignIn.setVisibility(View.GONE);
+                or.setVisibility(View.GONE);
+                signUp_redirect.setVisibility(View.GONE);
+
 
                 if (!TextUtils.isEmpty(emailText) && isValidEmail) {
                     // Email is not empty and valid, remove error
@@ -145,9 +159,10 @@ public class SignIn extends AppCompatActivity {
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 // Check if password is empty
                 String passwordText = charSequence.toString().trim();
+                boolean isValidPassword = isValidPassword(passwordText);
 
 
-                if (!TextUtils.isEmpty(passwordText)) {
+                if (!TextUtils.isEmpty(passwordText)&& isValidPassword) {
                     // Password is not empty, remove error
                     passwordTextInputLayout.setError(null);
                     passwordTextInputLayout.setHintTextColor(ColorStateList.valueOf(getColor(R.color.gray_primary)));

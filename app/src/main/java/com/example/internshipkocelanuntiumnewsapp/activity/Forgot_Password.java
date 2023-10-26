@@ -8,6 +8,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Patterns;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -22,6 +23,9 @@ public class Forgot_Password extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_password);
         getSupportActionBar().hide();
+
+        // Prevent keyboard from showing up immediately
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
         frgtPassword = (Button) findViewById(R.id.next_forgot_btn);
         frgt_pswd_email = findViewById(R.id.forgot_password_EmailAddress);

@@ -3,6 +3,7 @@ package com.example.internshipkocelanuntiumnewsapp.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Editable;
@@ -11,6 +12,7 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -31,6 +33,7 @@ import com.kwabenaberko.newsapilib.models.response.ArticleResponse;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class NewsActivity extends AppCompatActivity  {
 
@@ -54,17 +57,21 @@ public class NewsActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_news);
         getSupportActionBar().hide();
 
-        selectedButtonIds = getIntent().getIntegerArrayListExtra("selectedButtonIds");
-
-
-        // Add a debug log to print the received selectedButtonIds
-        if (selectedButtonIds != null) {
-            for (int buttonId : selectedButtonIds) {
+        SharedPreferences sharedPreferences = getSharedPreferences("Saved Buttons", MODE_PRIVATE);
+        Set<String> selectedButtonIdsSet = sharedPreferences.getStringSet("selectedButtonIds", null);
+        if (selectedButtonIdsSet != null) {
+            for (String buttonId : selectedButtonIdsSet) {
+                Button button = findViewById(Integer.parseInt(buttonId));
+                if (button != null) {
+                    toggleButtonSelection(button);
+                }
                 Log.d("NewsActivity", "Received selectedButtonId: " + buttonId);
             }
-        } else {
+        }else {
             Log.d("NewsActivity", "selectedButtonIds is null");
         }
+
+
 
         //Get the ListView and attach the adapter
         newsListView = findViewById(R.id.news_list_view);
@@ -72,6 +79,8 @@ public class NewsActivity extends AppCompatActivity  {
         search_button_img = findViewById(R.id.search_btn);
 
         randomNewsButton = (Button) findViewById(R.id.random_news_button);
+
+        randomNewsButton.setSelected(true);
 
         buttons =  new Button[] {
                 findViewById(R.id.sports_topic_button),
@@ -86,7 +95,17 @@ public class NewsActivity extends AppCompatActivity  {
                 findViewById(R.id.fashion_topic_button)
         };
 
-       loadButtonStates();
+        // Prevent keyboard from showing up immediately
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+
+        loadButtonStates();
+
+        for (Button button : buttons) {
+            if (button != randomNewsButton) {
+                button.setBackgroundResource(R.drawable.rounded_corner_view);
+                button.setTextColor(getColor(R.color.gray_darker));
+            }
+        }
 
 
 
@@ -173,17 +192,32 @@ public class NewsActivity extends AppCompatActivity  {
 
     public void toggleButtonSelection(Button button){
         int buttonId = button.getId();
+
         if (selectedButtonIds.contains(buttonId)) {
             // Button is selected, so deselect it
             selectedButtonIds.remove(Integer.valueOf(buttonId));
             button.setSelected(false);
+            button.setBackgroundResource(R.drawable.rounded_corner_view);
+            button.setTextColor(getColor(R.color.gray_darker));
 
         } else {
-            // Button is not selected, so select it
+            // Deselect all previously selected buttons and set their backgrounds
+            for (int id : selectedButtonIds) {
+                Button selectedButton = findViewById(id);
+                selectedButton.setBackgroundResource(R.drawable.rounded_corner_view);
+                selectedButton.setTextColor(getColor(R.color.gray_darker));
+            }
+
+            // Select the new button
             selectedButtonIds.add(buttonId);
             button.setSelected(true);
+            button.setBackgroundResource(R.drawable.roundshapebutton);
+            button.setTextColor(getColor(R.color.white));
+
             // Fetch news articles based on the selected topic
             fetchNewsArticles(button.getText().toString());
+
+
         }
     }
 
@@ -201,7 +235,9 @@ public class NewsActivity extends AppCompatActivity  {
         randomNewsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                toggleButtonSelection(randomNewsButton);
                 fetchNewsArticles(defaultSearchTerm);
+                startActivity(new Intent(NewsActivity.this, select_your_favorite_topics.class));
 
 
             }
@@ -246,6 +282,10 @@ public class NewsActivity extends AppCompatActivity  {
 
         }
     }
+
+
+
+
 
 
 }

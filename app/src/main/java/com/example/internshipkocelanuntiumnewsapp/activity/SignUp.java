@@ -5,27 +5,33 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.internshipkocelanuntiumnewsapp.R;
+import com.example.internshipkocelanuntiumnewsapp.utils.UserCreationTask;
+import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class SignUp extends AppCompatActivity {
+public class SignUp extends AppCompatActivity implements UserCreationTask.UserCreationCallback{
 
     Button signUpBtn;
     LinearLayout signInTxt;
     EditText username, email, new_pass, repeat_pass;
     SharedPreferences sharedPreferences;
+
+    private UserCreationTask.UserCreationCallback userCreationCallback;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +47,14 @@ public class SignUp extends AppCompatActivity {
         new_pass = findViewById(R.id.sign_up_newTextPassword);
         repeat_pass = findViewById(R.id.sign_up_repeatnewTextPassword);
 
+        // Initialize the callback
+        userCreationCallback = this;
+
+        // Prevent keyboard from showing up immediately
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+
         sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+
 
         email.addTextChangedListener(new TextWatcher() {
             @Override
@@ -122,12 +135,15 @@ public class SignUp extends AppCompatActivity {
                     repeat_pass.setError("Passwords do not match");
                     return;
                 }
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString("username", username.getText().toString());
-                editor.putString("email", email.getText().toString());
-                editor.putString("password", new_pass.getText().toString());
-                editor.apply();
-                startActivity(new Intent(SignUp.this, select_your_favorite_topics.class));
+
+                //Construct the JSON data for user creation
+                String userData = "{\"firstName\":\"" + username.getText().toString() + "\", \"lastName\":\"\", \"username\":\"" + username.getText().toString() + "\", \"email\":\"" + email.getText().toString() + "\", \"password\":\"" + new_pass.getText().toString() + "\"}";
+
+                // Execute the UserCreationTask
+                new UserCreationTask(SignUp.this, userCreationCallback).execute(userData);
+
+
+
             }
         });
 
@@ -144,4 +160,40 @@ public class SignUp extends AppCompatActivity {
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
     }
+
+    @Override
+    public void onUserCreationSuccess() {
+        // Handle the case where user creation was successful
+        // Save the email and password to SharedPreferences
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("email", email.getText().toString());
+        editor.putString("password", new_pass.getText().toString());
+        editor.apply();
+
+        Intent intent = new Intent(this, select_your_favorite_topics.class);
+
+
+
+
+        startActivity(intent);
+    }
+
+
+    @Override
+    public void onUserCreationFailure(String errorMessage) {
+        // Handle the case where user creation was not successful
+
+
+
+        if (errorMessage.contains("Duplicate entry")) {
+            // Handle the case where the username already exists
+            username.setError("Username already exists. Please choose another one.");
+        } else {
+            // Handle other error cases
+            username.setError("User creation failed. Please try again later.");
+        }
+    }
+
+
 }
