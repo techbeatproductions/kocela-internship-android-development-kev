@@ -72,13 +72,16 @@ public class SignIn extends AppCompatActivity {
                 Log.d(TAG, "User Email: " + userEmail);
                 Log.d(TAG, "User Password: " + userPassword);
 
-                new UserLoginTask(SignIn.this).execute(userEmail, userPassword);
+
+                new UserLoginTask(SignIn.this, emailTextInputLayout, passwordTextInputLayout).execute(userEmail, userPassword);
 
 
 
             } else {
                 // Handle invalid email or password
                 Log.d(TAG, "Sign-in failed");
+
+                emailTextInputLayout.setError("Please enter valid credentials");
 
 
                 ;

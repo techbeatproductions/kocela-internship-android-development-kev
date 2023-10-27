@@ -6,6 +6,8 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.example.internshipkocelanuntiumnewsapp.activity.NewsActivity;
+import com.example.internshipkocelanuntiumnewsapp.activity.SignIn;
+import com.google.android.material.textfield.TextInputLayout;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -19,11 +21,17 @@ import okhttp3.Response;
 public class UserLoginTask extends AsyncTask<String, Void, String> {
     private Context context;
 
-    // Constructor to receive the context
-    public UserLoginTask(Context context) {
-        this.context = context;
+    private SignIn signInActivity;
+    private TextInputLayout emailTextInputLayout,passwordTextInputLayout;
 
+    // Constructor to receive the context
+    public UserLoginTask(SignIn activity, TextInputLayout emailTextInputLayout, TextInputLayout passwordTextInputLayout) {
+        this.signInActivity = activity;
+        this.emailTextInputLayout = emailTextInputLayout;
+        this.passwordTextInputLayout = passwordTextInputLayout;
+        this.context = activity;
     }
+
 
     @Override
     protected String doInBackground(String... params) {
@@ -77,10 +85,35 @@ public class UserLoginTask extends AsyncTask<String, Void, String> {
                 // Handle the case where login was not successful
                 Log.d("UserLoginTask", "Login failed");
 
+                String message = jsonResponse.optString("message", "");
+
+                if (!message.isEmpty() && message.equals("Invalid username")) {
+                    signInActivity.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            emailTextInputLayout.setError("Invalid username");
+                        }
+                    });
+                } else {
+                    signInActivity.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            passwordTextInputLayout.setError("Invalid  password");
+                        }
+                    });
+                }
             }
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d("UserLoginTask", "Error parsing JSON response");
+
+            signInActivity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    emailTextInputLayout.setError("An error occurred");
+                }
+            });
         }
     }
+
 }
